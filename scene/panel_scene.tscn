@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk0ron36pr416"]
+[gd_scene load_steps=9 format=3 uid="uid://dk0ron36pr416"]
 
 [ext_resource type="Texture2D" uid="uid://do3rxg688c2nn" path="res://asset/background/kitchen_bg.jpg" id="1_66hmj"]
 [ext_resource type="Script" uid="uid://bxbtw8a7wpa3k" path="res://scene/panel_scene.gd" id="1_v7y01"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="3_cgyb5"]
 [ext_resource type="Texture2D" uid="uid://dttq8ux52v0eu" path="res://asset/panel_stuff/panel_covers.PNG" id="6_o3onp"]
+[ext_resource type="AudioStream" uid="uid://cy7mvfvids8dc" path="res://asset/sfx/click.wav" id="7_n0x62"]
 [ext_resource type="Texture2D" uid="uid://cgxet7bql5roq" path="res://asset/panel_stuff/btn_switch_off.png" id="7_yif31"]
 [ext_resource type="Texture2D" uid="uid://clbe3jq4nn68a" path="res://asset/panel_stuff/btn_switch_on.png" id="8_o3onp"]
 
@@ -209,6 +210,9 @@ position = Vector2(1089, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
 position = Vector2(-549.25, -0.25)
 shape = SubResource("RectangleShape2D_o3onp")
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_n0x62")
 
 [connection signal="pressed" from="Control2/Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Control2/Button2" to="." method="_on_button_2_pressed"]

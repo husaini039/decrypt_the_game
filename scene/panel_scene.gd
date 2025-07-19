@@ -29,7 +29,7 @@ func _ready():
 				btn.texture_focused = null
 
 func play_click_sound():
-	$Control/click.play()
+	$click.play()
 
 func is_switch_on(btn: TextureButton) -> bool:
 	return btn.texture_normal == SWITCH_ON or btn.texture_pressed == SWITCH_ON
