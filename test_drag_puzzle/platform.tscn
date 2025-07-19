@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfxd48onrgivp"]
+
+[ext_resource type="Script" uid="uid://dfmg1ddjxri0t" path="res://test_drag_puzzle/platform.gd" id="1_bx6c3"]
+
+[node name="Slot" type="PanelContainer"]
+script = ExtResource("1_bx6c3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+expand_mode = 1

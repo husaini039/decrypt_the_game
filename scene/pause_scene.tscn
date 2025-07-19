@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://p6dyldhqhwki"]
+
+[ext_resource type="Script" uid="uid://bmshwbjniotnw" path="res://scene/pause_scene.gd" id="1_n8lvd"]
+[ext_resource type="FontFile" uid="uid://3hjaa4twmkdf" path="res://asset/UI/Sprout Lands - UI Pack - Basic pack/fonts/WestoriademoRegular-nAdWJ.otf" id="1_qkudd"]
+[ext_resource type="Texture2D" uid="uid://dcbw85g0jld83" path="res://asset/background/filter_no_arrow.PNG" id="1_w45hp"]
+[ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="2_pdkhq"]
+
+[node name="pause_menu" type="CanvasLayer"]
+script = ExtResource("1_n8lvd")
+
+[node name="Pause" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+offset_right = 1280.0
+offset_bottom = 800.0
+color = Color(0.101961, 0.101961, 0.101961, 0.690196)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Pause"]
+offset_left = 464.0
+offset_top = 240.0
+offset_right = 811.0
+offset_bottom = 322.688
+theme_override_fonts/font = ExtResource("1_qkudd")
+theme_override_font_sizes/font_size = 81
+text = "PAUSED"
+metadata/_edit_lock_ = true
+
+[node name="retry" type="Button" parent="Pause"]
+offset_left = 400.0
+offset_top = 416.0
+offset_right = 512.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("2_pdkhq")
+text = "retry"
+flat = true
+
+[node name="resume" type="Button" parent="Pause"]
+offset_left = 560.0
+offset_top = 416.0
+offset_right = 672.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("2_pdkhq")
+text = "resume"
+flat = true
+
+[node name="mainmenu" type="Button" parent="Pause"]
+offset_left = 712.0
+offset_top = 416.0
+offset_right = 824.0
+offset_bottom = 536.0
+theme_override_fonts/font = ExtResource("2_pdkhq")
+text = "main menu"
+flat = true
+
+[node name="FilterNoArrow" type="Sprite2D" parent="Pause"]
+position = Vector2(640, 400)
+scale = Vector2(0.666667, 0.740741)
+texture = ExtResource("1_w45hp")
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Pause/retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Pause/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/mainmenu" to="." method="_on_mainmenu_pressed"]

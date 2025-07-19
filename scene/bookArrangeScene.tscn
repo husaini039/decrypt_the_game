@@ -1,0 +1,167 @@
+[gd_scene load_steps=14 format=3 uid="uid://bxxarxh2xsltr"]
+
+[ext_resource type="Texture2D" uid="uid://bujhiguy85vre" path="res://asset/background/livingRoom.jpg" id="1_6i5ct"]
+[ext_resource type="PackedScene" uid="uid://brvmtw4vrtf2e" path="res://scene/slot.tscn" id="1_648a3"]
+[ext_resource type="Script" uid="uid://b0lk223ajkbrk" path="res://scene/book_arrange_scene.gd" id="1_i7am4"]
+[ext_resource type="Texture2D" uid="uid://b8bwknjqckipx" path="res://asset/decoration/cabinet1.png" id="2_i7am4"]
+[ext_resource type="Texture2D" uid="uid://d3tjbvq7ci4kp" path="res://asset/book/8b_book.JPG" id="6_jq35w"]
+[ext_resource type="Texture2D" uid="uid://dc4msuqtkbg25" path="res://asset/book/14_book.JPG" id="7_2ky46"]
+[ext_resource type="Texture2D" uid="uid://cbtim8jtmyvw1" path="res://asset/book/88_book.JPG" id="8_lavyn"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="9_4n1o6"]
+[ext_resource type="Texture2D" uid="uid://cmqpjmcdk72ee" path="res://asset/book/91_book.JPG" id="9_173uq"]
+[ext_resource type="Texture2D" uid="uid://gnq5csa43klh" path="res://asset/book/purple_book.JPG" id="10_ykt63"]
+[ext_resource type="Texture2D" uid="uid://d2abjyks3a022" path="res://asset/book/66_book.JPG" id="11_3ki20"]
+[ext_resource type="Texture2D" uid="uid://dv0wvav86xgrl" path="res://asset/decoration/almari.png" id="12_jq35w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq35w"]
+size = Vector2(48.25, 47.75)
+
+[node name="BookArrange" type="Node2D"]
+script = ExtResource("1_i7am4")
+
+[node name="LivingRoom" type="Sprite2D" parent="."]
+position = Vector2(416, 434)
+scale = Vector2(1.36312, 1.36312)
+texture = ExtResource("1_6i5ct")
+metadata/_edit_lock_ = true
+
+[node name="cabineto" type="Sprite2D" parent="."]
+position = Vector2(560, 670)
+scale = Vector2(2.28378, 2.28378)
+texture = ExtResource("2_i7am4")
+
+[node name="Almari" type="Sprite2D" parent="."]
+position = Vector2(616, 696)
+scale = Vector2(2.32336, 2.32336)
+texture = ExtResource("12_jq35w")
+metadata/_edit_lock_ = true
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 376.0
+offset_top = 99.0
+offset_right = 416.0
+offset_bottom = 139.0
+
+[node name="GridContainer" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 11.0003
+offset_top = 302.0
+offset_right = 61.0003
+offset_bottom = 442.0
+rotation = -3.14159
+pivot_offset = Vector2(25, 125)
+
+[node name="PanelContainer" parent="ui/GridContainer" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer/PanelContainer" index="0"]
+texture = ExtResource("6_jq35w")
+
+[node name="GridContainer2" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 2.00018
+offset_right = 212.0
+offset_bottom = 192.0
+rotation = -3.14159
+pivot_offset = Vector2(-25, 275)
+
+[node name="PanelContainer4" parent="ui/GridContainer2" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer2/PanelContainer4" index="0"]
+texture = ExtResource("7_2ky46")
+
+[node name="GridContainer3" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 2.00018
+offset_right = 260.0
+offset_bottom = 231.0
+rotation = -3.14159
+pivot_offset = Vector2(-25, 275)
+
+[node name="PanelContainer4" parent="ui/GridContainer3" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer3/PanelContainer4" index="0"]
+texture = ExtResource("8_lavyn")
+
+[node name="GridContainer4" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 2.00018
+offset_right = 310.0
+offset_bottom = 231.0
+rotation = -3.14159
+pivot_offset = Vector2(-25, 275)
+
+[node name="PanelContainer4" parent="ui/GridContainer4" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer4/PanelContainer4" index="0"]
+texture = ExtResource("9_173uq")
+
+[node name="GridContainer5" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 2.00018
+offset_right = 361.0
+offset_bottom = 231.0
+rotation = -3.14159
+pivot_offset = Vector2(-25, 275)
+
+[node name="PanelContainer4" parent="ui/GridContainer5" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer5/PanelContainer4" index="0"]
+texture = ExtResource("10_ykt63")
+
+[node name="GridContainer6" type="GridContainer" parent="ui"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 2.00018
+offset_right = 412.0
+offset_bottom = 231.0
+rotation = -3.14159
+pivot_offset = Vector2(-25, 275)
+
+[node name="PanelContainer4" parent="ui/GridContainer6" instance=ExtResource("1_648a3")]
+layout_mode = 2
+
+[node name="TextureRect" parent="ui/GridContainer6/PanelContainer4" index="0"]
+texture = ExtResource("11_3ki20")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("9_4n1o6")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-549, 2)
+shape = SubResource("RectangleShape2D_jq35w")
+
+[node name="Area2D2" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
+position = Vector2(541.125, 2.25001)
+shape = SubResource("RectangleShape2D_jq35w")
+
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="m_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="m_exited"]
+[connection signal="input_event" from="FilterFront/Area2D2" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D2" to="." method="m_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D2" to="." method="m_exited"]
+
+[editable path="ui/GridContainer/PanelContainer"]
+[editable path="ui/GridContainer2/PanelContainer4"]
+[editable path="ui/GridContainer3/PanelContainer4"]
+[editable path="ui/GridContainer4/PanelContainer4"]
+[editable path="ui/GridContainer5/PanelContainer4"]
+[editable path="ui/GridContainer6/PanelContainer4"]

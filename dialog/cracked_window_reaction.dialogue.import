@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b1tutpgmrxfs3"
+path="res://.godot/imported/cracked_window_reaction.dialogue-96b2bf3aacbf21498562de5d891542fb.tres"
+
+[deps]
+
+source_file="res://dialog/cracked_window_reaction.dialogue"
+dest_files=["res://.godot/imported/cracked_window_reaction.dialogue-96b2bf3aacbf21498562de5d891542fb.tres"]
+
+[params]
+
+defaults=true

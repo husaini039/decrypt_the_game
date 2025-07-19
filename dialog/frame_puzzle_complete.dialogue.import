@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bv8mitomgjl3f"
+path="res://.godot/imported/frame_puzzle_complete.dialogue-3e38769ac4715cff0d75dbeeb6feab47.tres"
+
+[deps]
+
+source_file="res://dialog/frame_puzzle_complete.dialogue"
+dest_files=["res://.godot/imported/frame_puzzle_complete.dialogue-3e38769ac4715cff0d75dbeeb6feab47.tres"]
+
+[params]
+
+defaults=true

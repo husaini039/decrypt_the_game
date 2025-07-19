@@ -1,0 +1,233 @@
+[gd_scene load_steps=28 format=3 uid="uid://ci6bgcfpyc685"]
+
+[ext_resource type="Texture2D" uid="uid://8g6uj8ll88dk" path="res://asset/background/background_room1.jpg" id="1_0d0by"]
+[ext_resource type="Script" uid="uid://jf362uo1xwn2" path="res://script/main.gd" id="1_nvme4"]
+[ext_resource type="Texture2D" uid="uid://c7fwr7tfdl83c" path="res://asset/decoration/door.PNG" id="2_sjwqu"]
+[ext_resource type="Texture2D" uid="uid://dfltf3l7oeqdk" path="res://asset/decoration/board.PNG" id="3_4jsab"]
+[ext_resource type="Script" uid="uid://ccpqvw37u8anl" path="res://script/door.gd" id="4_c8vdw"]
+[ext_resource type="Texture2D" uid="uid://b2s5wa1mift0y" path="res://asset/decoration/arrow.png" id="4_nvme4"]
+[ext_resource type="AudioStream" uid="uid://b83x3dorg0bvv" path="res://asset/sfx/lockedDoor.mp3" id="6_njsuc"]
+[ext_resource type="Script" uid="uid://baxqllba7c6pv" path="res://scene/arrowLeft.gd" id="7_qc8tj"]
+[ext_resource type="Script" uid="uid://cr3bewlhy0qnx" path="res://scene/arrowRight.gd" id="8_kpc4e"]
+[ext_resource type="Texture2D" uid="uid://b5uiyqmg41jxe" path="res://asset/decoration/sticky.PNG" id="9_kpc4e"]
+[ext_resource type="PackedScene" uid="uid://ctdp64m27jddo" path="res://scene/fade_transition.tscn" id="11_v058b"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="12_nb3fk"]
+[ext_resource type="Texture2D" uid="uid://ceeqlqwoxoyh3" path="res://new_asset/sticky_blue.PNG" id="13_nb3fk"]
+[ext_resource type="Texture2D" uid="uid://p21sxhgh5exa" path="res://new_asset/frame_puzzle/pieces3.PNG" id="14_01gnm"]
+[ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="15_2aqo6"]
+[ext_resource type="PackedScene" uid="uid://h6sci4ykkvpo" path="res://scene/timer.tscn" id="16_thocl"]
+[ext_resource type="Texture2D" uid="uid://ct3dah2uskerd" path="res://asset/decoration/keypad.PNG" id="17_8iusl"]
+[ext_resource type="PackedScene" uid="uid://p6dyldhqhwki" path="res://scene/pause_scene.tscn" id="18_x7jop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8vdw"]
+size = Vector2(175, 259)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thocl"]
+size = Vector2(263.273, 130.247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qc8tj"]
+size = Vector2(146.752, 683.761)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi8q4"]
+size = Vector2(205.92, 587.76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v058b"]
+size = Vector2(225.883, 263.529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3fk"]
+size = Vector2(45, 54.25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2aqo6"]
+radius = 139.459
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njsuc"]
+size = Vector2(264, 424)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7jop"]
+size = Vector2(390.266, 597.345)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nvme4")
+metadata/_edit_vertical_guides_ = [64.0, 1216.0]
+metadata/_edit_horizontal_guides_ = [384.0]
+
+[node name="mainRoomBG" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+texture = ExtResource("1_0d0by")
+metadata/_edit_lock_ = true
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(692, 363)
+texture = ExtResource("2_sjwqu")
+
+[node name="doorArea" type="Area2D" parent="Door"]
+position = Vector2(-1, 112)
+script = ExtResource("4_c8vdw")
+
+[node name="doorCollision" type="CollisionShape2D" parent="Door/doorArea"]
+position = Vector2(-300, 42.5)
+shape = SubResource("RectangleShape2D_c8vdw")
+
+[node name="doorLockedSound" type="AudioStreamPlayer2D" parent="Door/doorArea"]
+stream = ExtResource("6_njsuc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 80.0
+offset_right = 613.0
+offset_bottom = 138.0
+text = "debug lost"
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(696, 304)
+scale = Vector2(1, 1.03556)
+texture = ExtResource("3_4jsab")
+
+[node name="Board2" type="Sprite2D" parent="Board"]
+position = Vector2(-24, 38.6266)
+texture = ExtResource("3_4jsab")
+
+[node name="Board3" type="Sprite2D" parent="Board"]
+position = Vector2(-592, -61.8026)
+rotation = 3.13985
+texture = ExtResource("3_4jsab")
+
+[node name="Area2D" type="Area2D" parent="Board"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Area2D"]
+position = Vector2(-303.344, -33.3509)
+rotation = 0.261799
+shape = SubResource("RectangleShape2D_thocl")
+debug_color = Color(1.92523e-07, 0.613868, 0.611755, 0.42)
+
+[node name="arrowLeft" type="Sprite2D" parent="."]
+position = Vector2(80, 384)
+scale = Vector2(0.117, 0.117)
+texture = ExtResource("4_nvme4")
+
+[node name="arrowLeftArea" type="Area2D" parent="arrowLeft"]
+script = ExtResource("7_qc8tj")
+
+[node name="arrowLeftCollision" type="CollisionShape2D" parent="arrowLeft/arrowLeftArea"]
+position = Vector2(63.376, 0.000732422)
+shape = SubResource("RectangleShape2D_qc8tj")
+
+[node name="arrowRight" type="Sprite2D" parent="."]
+position = Vector2(1200, 384)
+scale = Vector2(0.122499, 0.122499)
+texture = ExtResource("4_nvme4")
+flip_h = true
+
+[node name="arrowRightArea" type="Area2D" parent="arrowRight"]
+script = ExtResource("8_kpc4e")
+
+[node name="arrowRightCollision" type="CollisionShape2D" parent="arrowRight/arrowRightArea"]
+position = Vector2(-92.96, -32.6526)
+shape = SubResource("RectangleShape2D_oi8q4")
+
+[node name="Sticky" type="Sprite2D" parent="."]
+position = Vector2(592, 344)
+scale = Vector2(0.2125, 0.2125)
+texture = ExtResource("9_kpc4e")
+
+[node name="stickyNote" type="Area2D" parent="Sticky"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sticky/stickyNote"]
+position = Vector2(37.6475, 18.8237)
+shape = SubResource("RectangleShape2D_v058b")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("12_nb3fk")
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-549, -0.25)
+shape = SubResource("RectangleShape2D_nb3fk")
+
+[node name="Area2D2" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
+position = Vector2(544.5, -0.125)
+shape = SubResource("RectangleShape2D_nb3fk")
+
+[node name="Pieces3" type="Sprite2D" parent="."]
+position = Vector2(1144, 728)
+rotation = -2.35619
+scale = Vector2(0.1919, 0.1919)
+texture = ExtResource("14_01gnm")
+
+[node name="Area2D" type="Area2D" parent="Pieces3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces3/Area2D"]
+position = Vector2(265.147, 138.885)
+shape = SubResource("CircleShape2D_2aqo6")
+
+[node name="StickyPopup" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(664, 368)
+texture = ExtResource("13_nb3fk")
+
+[node name="stickyPopup" type="Area2D" parent="StickyPopup"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StickyPopup/stickyPopup"]
+position = Vector2(44, 36)
+shape = SubResource("RectangleShape2D_njsuc")
+
+[node name="keypad_door" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(384, 256)
+scale = Vector2(0.125556, 0.125556)
+texture = ExtResource("17_8iusl")
+
+[node name="Area2D" type="Area2D" parent="keypad_door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="keypad_door/Area2D"]
+position = Vector2(35.8408, -3.9823)
+shape = SubResource("RectangleShape2D_x7jop")
+
+[node name="timer" parent="." instance=ExtResource("16_thocl")]
+
+[node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 0)
+stream = ExtResource("15_2aqo6")
+
+[node name="FadeTransition" parent="." instance=ExtResource("11_v058b")]
+visible = false
+
+[node name="pause_menu" parent="." instance=ExtResource("18_x7jop")]
+visible = false
+
+[connection signal="input_event" from="Door/doorArea" to="Door/doorArea" method="_on_input_event"]
+[connection signal="mouse_entered" from="Door/doorArea" to="." method="_on_door_area_mouse_entered"]
+[connection signal="mouse_exited" from="Door/doorArea" to="." method="_on_door_area_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="reset"]
+[connection signal="input_event" from="Board/Area2D" to="." method="open_wood"]
+[connection signal="mouse_entered" from="Board/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Board/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="arrowLeft/arrowLeftArea" to="arrowLeft/arrowLeftArea" method="_on_input_event"]
+[connection signal="mouse_entered" from="arrowLeft/arrowLeftArea" to="." method="_on_arrow_left_area_mouse_entered"]
+[connection signal="mouse_exited" from="arrowLeft/arrowLeftArea" to="." method="_on_arrow_left_area_mouse_exited"]
+[connection signal="input_event" from="arrowRight/arrowRightArea" to="arrowRight/arrowRightArea" method="_on_input_event"]
+[connection signal="mouse_entered" from="arrowRight/arrowRightArea" to="." method="_on_arrow_right_area_mouse_entered"]
+[connection signal="mouse_exited" from="arrowRight/arrowRightArea" to="." method="_on_arrow_right_area_mouse_exited"]
+[connection signal="input_event" from="Sticky/stickyNote" to="." method="clickSticky"]
+[connection signal="mouse_entered" from="Sticky/stickyNote" to="." method="_on_sticky_note_mouse_entered"]
+[connection signal="mouse_exited" from="Sticky/stickyNote" to="." method="_on_sticky_note_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D2" to="." method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D2" to="." method="_on_area_2d_2_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D2" to="." method="_on_area_2d_2_mouse_exited"]
+[connection signal="input_event" from="Pieces3/Area2D" to="." method="click_piece3"]
+[connection signal="mouse_entered" from="Pieces3/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Pieces3/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="StickyPopup/stickyPopup" to="." method="close_popup"]
+[connection signal="mouse_entered" from="StickyPopup/stickyPopup" to="." method="_on_sticky_popup_mouse_entered"]
+[connection signal="mouse_exited" from="StickyPopup/stickyPopup" to="." method="_on_sticky_popup_mouse_exited"]
+[connection signal="input_event" from="keypad_door/Area2D" to="." method="open_panel_door"]
+[connection signal="mouse_entered" from="keypad_door/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="keypad_door/Area2D" to="." method="_on_area_2d_mouse_exited"]

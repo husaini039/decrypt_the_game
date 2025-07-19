@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c0eg1k3ljsvt8"
+path="res://.godot/imported/seem_need_correct.dialogue-cdea694c4df26c1e94b61dfd62eccd09.tres"
+
+[deps]
+
+source_file="res://dialog/seem_need_correct.dialogue"
+dest_files=["res://.godot/imported/seem_need_correct.dialogue-cdea694c4df26c1e94b61dfd62eccd09.tres"]
+
+[params]
+
+defaults=true

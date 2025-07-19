@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://csxmbat435cks"]
+
+[ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="1_jo4jv"]
+[ext_resource type="Script" uid="uid://djbu1e7mnsvqi" path="res://scene/game_over_scene.gd" id="1_pcild"]
+[ext_resource type="PackedScene" uid="uid://ctdp64m27jddo" path="res://scene/fade_transition.tscn" id="3_evmy3"]
+[ext_resource type="Texture2D" uid="uid://dcbw85g0jld83" path="res://asset/background/filter_no_arrow.PNG" id="4_evmy3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pcild")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1287.0
+offset_bottom = 808.0
+color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 192.0
+offset_right = 922.0
+offset_bottom = 289.875
+theme_override_fonts/font = ExtResource("1_jo4jv")
+theme_override_font_sizes/font_size = 81
+text = "TIME IS UP!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 344.0
+offset_right = 1013.0
+offset_bottom = 542.75
+theme_override_fonts/font = ExtResource("1_jo4jv")
+theme_override_font_sizes/font_size = 81
+text = "YOU DID NOT FINISH 
+BEFORE THE TIMER"
+horizontal_alignment = 1
+
+[node name="retry" type="Button" parent="."]
+offset_left = 408.0
+offset_top = 616.0
+offset_right = 568.0
+offset_bottom = 680.0
+text = "retry"
+
+[node name="mainmenu" type="Button" parent="."]
+offset_left = 720.0
+offset_top = 616.0
+offset_right = 914.0
+offset_bottom = 680.0
+text = "main menu"
+
+[node name="ColorRect2" parent="." instance=ExtResource("3_evmy3")]
+visible = false
+
+[node name="FilterNoArrow" type="Sprite2D" parent="."]
+position = Vector2(640, 401)
+scale = Vector2(0.666667, 0.738889)
+texture = ExtResource("4_evmy3")
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="mainmenu" to="." method="_on_mainmenu_pressed"]

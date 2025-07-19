@@ -1,0 +1,230 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk0ron36pr416"]
+
+[ext_resource type="Texture2D" uid="uid://do3rxg688c2nn" path="res://asset/background/kitchen_bg.jpg" id="1_66hmj"]
+[ext_resource type="Script" uid="uid://bxbtw8a7wpa3k" path="res://scene/panel_scene.gd" id="1_v7y01"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="3_cgyb5"]
+[ext_resource type="Texture2D" uid="uid://dttq8ux52v0eu" path="res://asset/panel_stuff/panel_covers.PNG" id="6_o3onp"]
+[ext_resource type="Texture2D" uid="uid://cgxet7bql5roq" path="res://asset/panel_stuff/btn_switch_off.png" id="7_yif31"]
+[ext_resource type="Texture2D" uid="uid://clbe3jq4nn68a" path="res://asset/panel_stuff/btn_switch_on.png" id="8_o3onp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3onp"]
+size = Vector2(54.5, 54.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_v7y01")
+
+[node name="KitchenBg" type="Sprite2D" parent="."]
+position = Vector2(376, 496)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("1_66hmj")
+metadata/_edit_lock_ = true
+
+[node name="PanelCovers" type="Sprite2D" parent="."]
+position = Vector2(736, 400)
+scale = Vector2(0.845556, 0.845555)
+texture = ExtResource("6_o3onp")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 232.0
+offset_top = 544.0
+offset_right = 272.0
+offset_bottom = 584.0
+
+[node name="Button0" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = -384.0
+offset_right = 304.0
+offset_bottom = -280.0
+toggle_mode = true
+texture_normal = ExtResource("8_o3onp")
+texture_pressed = ExtResource("7_yif31")
+
+[node name="Button2" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = -384.0
+offset_right = 416.0
+offset_bottom = -280.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button3" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -384.0
+offset_right = 528.0
+offset_bottom = -280.0
+toggle_mode = true
+texture_normal = ExtResource("8_o3onp")
+texture_pressed = ExtResource("7_yif31")
+
+[node name="Button4" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = -384.0
+offset_right = 640.0
+offset_bottom = -280.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button5" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = -272.0
+offset_right = 304.0
+offset_bottom = -168.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button6" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = -272.0
+offset_right = 416.0
+offset_bottom = -168.0
+toggle_mode = true
+texture_normal = ExtResource("8_o3onp")
+texture_pressed = ExtResource("7_yif31")
+
+[node name="Button7" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -272.0
+offset_right = 528.0
+offset_bottom = -168.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button8" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = -272.0
+offset_right = 640.0
+offset_bottom = -168.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button9" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = -160.0
+offset_right = 304.0
+offset_bottom = -56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button10" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = -160.0
+offset_right = 416.0
+offset_bottom = -56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button11" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -160.0
+offset_right = 528.0
+offset_bottom = -56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button12" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = -160.0
+offset_right = 640.0
+offset_bottom = -56.0
+toggle_mode = true
+texture_normal = ExtResource("8_o3onp")
+texture_pressed = ExtResource("7_yif31")
+
+[node name="Button13" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = -48.0
+offset_right = 304.0
+offset_bottom = 56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button14" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 312.0
+offset_top = -48.0
+offset_right = 416.0
+offset_bottom = 56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="Button15" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = -48.0
+offset_right = 528.0
+offset_bottom = 56.0
+toggle_mode = true
+texture_normal = ExtResource("8_o3onp")
+texture_pressed = ExtResource("7_yif31")
+
+[node name="Button16" type="TextureButton" parent="Control2"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = -48.0
+offset_right = 640.0
+offset_bottom = 56.0
+toggle_mode = true
+texture_normal = ExtResource("7_yif31")
+texture_pressed = ExtResource("8_o3onp")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("3_cgyb5")
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-549.25, -0.25)
+shape = SubResource("RectangleShape2D_o3onp")
+
+[node name="Area2D2" type="Area2D" parent="FilterFront"]
+position = Vector2(1089, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
+position = Vector2(-549.25, -0.25)
+shape = SubResource("RectangleShape2D_o3onp")
+
+[connection signal="pressed" from="Control2/Button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Control2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control2/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control2/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Control2/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Control2/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Control2/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Control2/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Control2/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Control2/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Control2/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="Control2/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="Control2/Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="Control2/Button14" to="." method="_on_button_14_pressed"]
+[connection signal="pressed" from="Control2/Button15" to="." method="_on_button_15_pressed"]
+[connection signal="pressed" from="Control2/Button16" to="." method="_on_button_16_pressed"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="left"]
+[connection signal="input_event" from="FilterFront/Area2D2" to="." method="left"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfhgrvpqfwjlj"]
+
+[ext_resource type="Script" uid="uid://do8xbnpx486eq" path="res://object.gd" id="1_ge6el"]
+[ext_resource type="PackedScene" uid="uid://dfxd48onrgivp" path="res://test_drag_puzzle/platform.tscn" id="2_ephjh"]
+
+[node name="object" type="Node2D"]
+script = ExtResource("1_ge6el")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Inv" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Slot" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/Inv" instance=ExtResource("2_ephjh")]
+layout_mode = 2
+
+[editable path="UI/Inv/Slot"]

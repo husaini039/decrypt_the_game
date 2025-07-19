@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxdunp6thi4i8"]
+
+[ext_resource type="PackedScene" uid="uid://bfhgrvpqfwjlj" path="res://test_drag_puzzle/object_drag.tscn" id="1_kn5i3"]
+[ext_resource type="PackedScene" uid="uid://dfxd48onrgivp" path="res://test_drag_puzzle/platform.tscn" id="2_nfo3n"]
+
+[node name="world" type="Node2D"]
+
+[node name="platform" parent="." instance=ExtResource("2_nfo3n")]
+
+[node name="object" parent="." instance=ExtResource("1_kn5i3")]
+position = Vector2(509, -32)

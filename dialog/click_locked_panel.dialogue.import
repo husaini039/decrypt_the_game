@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c2k57in81bt41"
+path="res://.godot/imported/click_locked_panel.dialogue-f93a0c1a0afe26189ac52737ce32d6e1.tres"
+
+[deps]
+
+source_file="res://dialog/click_locked_panel.dialogue"
+dest_files=["res://.godot/imported/click_locked_panel.dialogue-f93a0c1a0afe26189ac52737ce32d6e1.tres"]
+
+[params]
+
+defaults=true

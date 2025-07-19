@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b26320v8aesym"
+path="res://.godot/imported/table_puzzle_locked.dialogue-1142013b5205a16043cfcbf9a58ef782.tres"
+
+[deps]
+
+source_file="res://dialog/table_puzzle_locked.dialogue"
+dest_files=["res://.godot/imported/table_puzzle_locked.dialogue-1142013b5205a16043cfcbf9a58ef782.tres"]
+
+[params]
+
+defaults=true

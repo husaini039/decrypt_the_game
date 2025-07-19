@@ -1,0 +1,274 @@
+[gd_scene load_steps=25 format=3 uid="uid://rc46fas7vsce"]
+
+[ext_resource type="Texture2D" uid="uid://bujhiguy85vre" path="res://asset/background/livingRoom.jpg" id="1_xxapn"]
+[ext_resource type="Texture2D" uid="uid://b8bwknjqckipx" path="res://asset/decoration/cabinet1.png" id="2_oc4ir"]
+[ext_resource type="Texture2D" uid="uid://ct3dah2uskerd" path="res://asset/decoration/keypad.PNG" id="3_oc4ir"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="4_p5nns"]
+[ext_resource type="Script" uid="uid://crdapmvtt5pra" path="res://scene/keypad_popup.gd" id="5_1sb7m"]
+[ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="6_tc42x"]
+[ext_resource type="AudioStream" uid="uid://cwfcpmrmbf5y6" path="res://asset/sfx/click2.wav" id="7_wd8b1"]
+[ext_resource type="AudioStream" uid="uid://bbttdgo4frril" path="res://asset/sfx/qiuck sizzle.wav" id="8_k4e3d"]
+[ext_resource type="AudioStream" uid="uid://cq5ujtv2e2yt5" path="res://asset/sfx/correctSound.mp3" id="8_tc42x"]
+
+[sub_resource type="FontVariation" id="FontVariation_0i53x"]
+base_font = ExtResource("6_tc42x")
+spacing_glyph = 103
+spacing_space = 80
+spacing_top = -10
+
+[sub_resource type="Theme" id="Theme_xjjr3"]
+default_font = SubResource("FontVariation_0i53x")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2vbk"]
+radius = 44932.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4mpe"]
+radius = 19112.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgwh6"]
+radius = 7713.68
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ab2ii"]
+radius = 3365.96
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35q5v"]
+radius = 1393.56
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkehy"]
+radius = 590.803
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4utp6"]
+radius = 252.498
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lve82"]
+radius = 107.283
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0oo7"]
+radius = 86.0131
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ie4o"]
+radius = 46.9951
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jt3qa"]
+radius = 64.4577
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skxnb"]
+radius = 46.8655
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sb7m"]
+size = Vector2(40.4375, 53.375)
+
+[node name="keypad_scene" type="Node2D"]
+
+[node name="LivingRoom" type="Sprite2D" parent="."]
+position = Vector2(728, 0)
+scale = Vector2(2.08, 2.08)
+texture = ExtResource("1_xxapn")
+metadata/_edit_lock_ = true
+
+[node name="Cabinet1" type="Sprite2D" parent="."]
+position = Vector2(560, -264)
+scale = Vector2(3.66393, 3.66393)
+texture = ExtResource("2_oc4ir")
+metadata/_edit_lock_ = true
+
+[node name="Keypad" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(432, 360)
+scale = Vector2(0.498333, 0.498333)
+texture = ExtResource("3_oc4ir")
+
+[node name="keypadLock" type="Sprite2D" parent="."]
+position = Vector2(432, 368)
+scale = Vector2(0.503333, 0.503333)
+texture = ExtResource("3_oc4ir")
+script = ExtResource("5_1sb7m")
+
+[node name="Label" type="Label" parent="keypadLock"]
+anchors_preset = -1
+anchor_left = -0.0200331
+anchor_top = -0.000132412
+anchor_right = -0.0200331
+anchor_bottom = -0.000132412
+offset_left = -85.5829
+offset_top = -309.815
+offset_right = 293.417
+offset_bottom = -227.815
+theme = SubResource("Theme_xjjr3")
+theme_override_colors/font_color = Color(0.419608, 0.827451, 0, 1)
+theme_override_font_sizes/font_size = 76
+paragraph_separator = "\\n "
+metadata/_edit_use_anchors_ = true
+
+[node name="AreaEnter" type="Area2D" parent="keypadLock"]
+position = Vector2(180, 263.836)
+scale = Vector2(0.0010715, 0.0010715)
+
+[node name="enterButton" type="CollisionShape2D" parent="keypadLock/AreaEnter"]
+position = Vector2(-6903.67, -17259.2)
+shape = SubResource("CircleShape2D_l2vbk")
+
+[node name="AreaNum0" type="Area2D" parent="keypadLock"]
+position = Vector2(40.685, 231.781)
+scale = Vector2(0.00251908, 0.00251908)
+
+[node name="num0" type="CollisionShape2D" parent="keypadLock/AreaNum0"]
+position = Vector2(-3425.91, 6362.4)
+shape = SubResource("CircleShape2D_a4mpe")
+
+[node name="AreaNum9" type="Area2D" parent="keypadLock"]
+position = Vector2(177.534, 114.657)
+scale = Vector2(0.00592234, 0.00592234)
+
+[node name="num9" type="CollisionShape2D" parent="keypadLock/AreaNum9"]
+position = Vector2(-624.522, -1457.21)
+shape = SubResource("CircleShape2D_lgwh6")
+
+[node name="AreaNum8" type="Area2D" parent="keypadLock"]
+position = Vector2(29.5891, 97.3972)
+scale = Vector2(0.0139234, 0.0139234)
+
+[node name="num8" type="CollisionShape2D" parent="keypadLock/AreaNum8"]
+position = Vector2(265.642, 885.478)
+shape = SubResource("CircleShape2D_ab2ii")
+
+[node name="AreaNum7" type="Area2D" parent="keypadLock"]
+position = Vector2(-119.589, 101.096)
+scale = Vector2(0.0327337, 0.0327337)
+
+[node name="num7" type="CollisionShape2D" parent="keypadLock/AreaNum7"]
+position = Vector2(414.302, 188.324)
+shape = SubResource("CircleShape2D_35q5v")
+
+[node name="AreaNum6" type="Area2D" parent="keypadLock"]
+position = Vector2(167.671, -39.452)
+scale = Vector2(0.0769567, 0.0769567)
+
+[node name="num6" type="CollisionShape2D" parent="keypadLock/AreaNum6"]
+position = Vector2(48.0612, 80.1005)
+shape = SubResource("CircleShape2D_bkehy")
+
+[node name="AreaNum5" type="Area2D" parent="keypadLock"]
+position = Vector2(-166.983, -753.459)
+scale = Vector2(0.180925, 0.180925)
+
+[node name="num5" type="CollisionShape2D" parent="keypadLock/AreaNum5"]
+position = Vector2(1100.12, 3980.51)
+shape = SubResource("CircleShape2D_4utp6")
+
+[node name="AreaNum4" type="Area2D" parent="keypadLock"]
+position = Vector2(-117.152, -528.612)
+scale = Vector2(0.425352, 0.425352)
+
+[node name="num4" type="CollisionShape2D" parent="keypadLock/AreaNum4"]
+position = Vector2(23.2558, 1164.5)
+shape = SubResource("CircleShape2D_lve82")
+
+[node name="AreaNum3" type="Area2D" parent="keypadLock"]
+position = Vector2(-88.5629, -399.612)
+scale = Vector2(0.565587, 0.565587)
+
+[node name="num3" type="CollisionShape2D" parent="keypadLock/AreaNum3"]
+position = Vector2(463.94, 403.55)
+shape = SubResource("CircleShape2D_d0oo7")
+
+[node name="AreaNum1" type="Area2D" parent="keypadLock"]
+position = Vector2(0, -0.00012207)
+
+[node name="num1" type="CollisionShape2D" parent="keypadLock/AreaNum1"]
+position = Vector2(-106.027, -172.603)
+shape = SubResource("CircleShape2D_3ie4o")
+
+[node name="AreaNum2" type="Area2D" parent="keypadLock"]
+position = Vector2(-50.548, -228.082)
+scale = Vector2(0.752055, 0.752055)
+
+[node name="num2" type="CollisionShape2D" parent="keypadLock/AreaNum2"]
+position = Vector2(111.475, 73.7705)
+shape = SubResource("CircleShape2D_jt3qa")
+
+[node name="AreaDel" type="Area2D" parent="keypadLock"]
+
+[node name="deleteButton" type="CollisionShape2D" parent="keypadLock/AreaDel"]
+position = Vector2(-106.027, 246.575)
+shape = SubResource("CircleShape2D_skxnb")
+
+[node name="clickSound" type="AudioStreamPlayer2D" parent="keypadLock"]
+stream = ExtResource("7_wd8b1")
+
+[node name="resultSound" type="AudioStreamPlayer2D" parent="keypadLock"]
+stream = ExtResource("8_k4e3d")
+
+[node name="resultLabel" type="Label" parent="keypadLock"]
+offset_left = -89.404
+offset_top = -321.854
+offset_right = 291.596
+offset_bottom = -205.854
+theme_override_colors/font_color = Color(0, 0.926273, 0.13451, 1)
+theme_override_fonts/font = ExtResource("6_tc42x")
+theme_override_font_sizes/font_size = 76
+metadata/_edit_use_anchors_ = true
+
+[node name="correctSound" type="AudioStreamPlayer2D" parent="keypadLock"]
+stream = ExtResource("8_tc42x")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("4_p5nns")
+metadata/_edit_lock_ = true
+
+[node name="left" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/left"]
+position = Vector2(-551.25, 7.62939e-06)
+shape = SubResource("RectangleShape2D_1sb7m")
+
+[node name="right" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/right"]
+position = Vector2(543.375, 1.12501)
+shape = SubResource("RectangleShape2D_1sb7m")
+
+[connection signal="input_event" from="keypadLock/AreaEnter" to="keypadLock" method="_on_area_enter_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaEnter" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaEnter" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum0" to="keypadLock" method="_on_area_num_0_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum0" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum0" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum9" to="keypadLock" method="_on_area_num_9_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum9" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum9" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum8" to="keypadLock" method="_on_area_num_8_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum8" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum8" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum7" to="keypadLock" method="_on_area_num_7_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum7" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum7" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum6" to="keypadLock" method="_on_area_num_6_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum6" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum6" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum5" to="keypadLock" method="_on_area_num_5_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum5" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum5" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum4" to="keypadLock" method="_on_area_num_4_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum4" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum4" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum3" to="keypadLock" method="_on_area_num_3_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum3" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum3" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum1" to="keypadLock" method="_on_area_num_1_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum1" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum1" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaNum2" to="keypadLock" method="_on_area_num_2_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaNum2" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaNum2" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="keypadLock/AreaDel" to="keypadLock" method="_on_area_del_input_event"]
+[connection signal="mouse_entered" from="keypadLock/AreaDel" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="keypadLock/AreaDel" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="FilterFront/left" to="keypadLock" method="_on_left_input_event"]
+[connection signal="mouse_entered" from="FilterFront/left" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/left" to="keypadLock" method="mouse_exited"]
+[connection signal="input_event" from="FilterFront/right" to="keypadLock" method="_on_right_input_event"]
+[connection signal="mouse_entered" from="FilterFront/right" to="keypadLock" method="mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/right" to="keypadLock" method="mouse_exited"]

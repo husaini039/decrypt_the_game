@@ -1,0 +1,189 @@
+[gd_scene load_steps=21 format=3 uid="uid://bdor2pemg25gl"]
+
+[ext_resource type="Texture2D" uid="uid://bujhiguy85vre" path="res://asset/background/livingRoom.jpg" id="1_7u06u"]
+[ext_resource type="Script" uid="uid://dcdu7jyhhkoct" path="res://scene/item_frame_puzzle.gd" id="1_r2u0g"]
+[ext_resource type="Texture2D" uid="uid://bhy0kgo7qyttm" path="res://new_asset/cabinet_closed.png" id="2_ulxer"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="3_o4ayj"]
+[ext_resource type="Texture2D" uid="uid://dta7nvi4ns3kb" path="res://new_asset/frame_puzzle/frame.png" id="3_sa6c2"]
+[ext_resource type="Texture2D" uid="uid://db4rrjydwyd7t" path="res://new_asset/frame_puzzle/pieces4.PNG" id="5_ubpgp"]
+[ext_resource type="Texture2D" uid="uid://p21sxhgh5exa" path="res://new_asset/frame_puzzle/pieces3.PNG" id="6_sa6c2"]
+[ext_resource type="Texture2D" uid="uid://bqcc1o2bsnjlf" path="res://new_asset/frame_puzzle/pieces2.PNG" id="7_r2u0g"]
+[ext_resource type="Script" uid="uid://35mridtd7xyu" path="res://scene/pieces_3.gd" id="7_sa6c2"]
+[ext_resource type="Texture2D" uid="uid://uwbqqgwba26" path="res://new_asset/frame_puzzle/pieces1.PNG" id="8_ntm37"]
+[ext_resource type="AudioStream" uid="uid://bhsqkosa37stq" path="res://asset/sfx/item_frame_puzzle/shimmer1.wav" id="11_a3jsi"]
+[ext_resource type="AudioStream" uid="uid://bea4pxqekemdq" path="res://asset/sfx/item_frame_puzzle/shimmer2.wav" id="12_0ovoo"]
+[ext_resource type="AudioStream" uid="uid://d3rnucc7giv4j" path="res://asset/sfx/item_frame_puzzle/shimmer3.wav" id="13_qj8ec"]
+[ext_resource type="AudioStream" uid="uid://dhjtxdg56rw5" path="res://asset/sfx/item_frame_puzzle/shimmer4.wav" id="14_ehrtb"]
+[ext_resource type="AudioStream" uid="uid://c788iqm8dy53m" path="res://asset/sfx/item_frame_puzzle/frame_unlock.wav" id="15_jkluo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2u0g"]
+radius = 88.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntm37"]
+radius = 121.846
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sq58l"]
+radius = 116.505
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv7go"]
+radius = 128.114
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2fowv"]
+radius = 41.8675
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_r2u0g")
+
+[node name="LivingRoom" type="Sprite2D" parent="."]
+position = Vector2(400, 312)
+scale = Vector2(1.46, 1.46)
+texture = ExtResource("1_7u06u")
+metadata/_edit_lock_ = true
+
+[node name="CabinetClosed" type="Sprite2D" parent="."]
+position = Vector2(632, 664)
+scale = Vector2(2.25342, 2.25342)
+texture = ExtResource("2_ulxer")
+metadata/_edit_lock_ = true
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(565, 473)
+scale = Vector2(0.677434, 0.677434)
+texture = ExtResource("3_sa6c2")
+
+[node name="click_pieces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pieces4" type="Sprite2D" parent="click_pieces"]
+visible = false
+position = Vector2(952, 424)
+scale = Vector2(0.592222, 0.592222)
+texture = ExtResource("5_ubpgp")
+script = ExtResource("7_sa6c2")
+
+[node name="Area2D" type="Area2D" parent="click_pieces/Pieces4"]
+position = Vector2(-1607.51, -715.947)
+scale = Vector2(1.68856, 1.68856)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="click_pieces/Pieces4/Area2D"]
+position = Vector2(984, 416)
+shape = SubResource("CircleShape2D_r2u0g")
+
+[node name="Pieces3" type="Sprite2D" parent="click_pieces"]
+visible = false
+position = Vector2(712, 544)
+scale = Vector2(0.722222, 0.722222)
+texture = ExtResource("6_sa6c2")
+script = ExtResource("7_sa6c2")
+
+[node name="Area2D" type="Area2D" parent="click_pieces/Pieces3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="click_pieces/Pieces3/Area2D"]
+position = Vector2(265.846, 144)
+shape = SubResource("CircleShape2D_ntm37")
+
+[node name="Pieces2" type="Sprite2D" parent="click_pieces"]
+visible = false
+position = Vector2(288, 488)
+scale = Vector2(0.686667, 0.686667)
+texture = ExtResource("7_r2u0g")
+script = ExtResource("7_sa6c2")
+
+[node name="Area2D" type="Area2D" parent="click_pieces/Pieces2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="click_pieces/Pieces2/Area2D"]
+position = Vector2(163.107, 209.709)
+shape = SubResource("CircleShape2D_sq58l")
+
+[node name="Pieces1" type="Sprite2D" parent="click_pieces"]
+visible = false
+position = Vector2(232, 480)
+scale = Vector2(0.624444, 0.624444)
+texture = ExtResource("8_ntm37")
+script = ExtResource("7_sa6c2")
+
+[node name="Area2D" type="Area2D" parent="click_pieces/Pieces1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="click_pieces/Pieces1/Area2D"]
+position = Vector2(166.548, -51.2456)
+shape = SubResource("CircleShape2D_rv7go")
+
+[node name="pieces_piece" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="frame4" type="Sprite2D" parent="pieces_piece"]
+visible = false
+position = Vector2(625, 496)
+scale = Vector2(0.364, 0.364)
+texture = ExtResource("5_ubpgp")
+
+[node name="frame1" type="Sprite2D" parent="pieces_piece"]
+visible = false
+position = Vector2(625, 496)
+scale = Vector2(0.36375, 0.36375)
+texture = ExtResource("8_ntm37")
+
+[node name="frame2" type="Sprite2D" parent="pieces_piece"]
+visible = false
+position = Vector2(625, 496)
+scale = Vector2(0.364, 0.364)
+texture = ExtResource("7_r2u0g")
+
+[node name="frame3" type="Sprite2D" parent="pieces_piece"]
+visible = false
+position = Vector2(625, 496)
+scale = Vector2(0.364, 0.364)
+texture = ExtResource("6_sa6c2")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("3_o4ayj")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(537.75, 3.375)
+shape = SubResource("CircleShape2D_2fowv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-547.875, -2.25)
+shape = SubResource("CircleShape2D_2fowv")
+
+[node name="Shimmer1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_a3jsi")
+
+[node name="Shimmer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_0ovoo")
+
+[node name="Shimmer3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_qj8ec")
+
+[node name="Shimmer4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_ehrtb")
+
+[node name="frame_unlock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_jkluo")
+
+[connection signal="input_event" from="click_pieces/Pieces4/Area2D" to="." method="pieces4"]
+[connection signal="mouse_entered" from="click_pieces/Pieces4/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="click_pieces/Pieces4/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="click_pieces/Pieces3/Area2D" to="." method="pieces3"]
+[connection signal="mouse_entered" from="click_pieces/Pieces3/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="click_pieces/Pieces3/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="click_pieces/Pieces2/Area2D" to="." method="pieces2"]
+[connection signal="mouse_entered" from="click_pieces/Pieces2/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="click_pieces/Pieces2/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="click_pieces/Pieces1/Area2D" to="." method="pieces1"]
+[connection signal="mouse_entered" from="click_pieces/Pieces1/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="click_pieces/Pieces1/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]

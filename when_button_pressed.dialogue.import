@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://3rxtpwnjx8rq"
+path="res://.godot/imported/when_button_pressed.dialogue-098f4667e95b4e9d089e4235d62d0d54.tres"
+
+[deps]
+
+source_file="res://when_button_pressed.dialogue"
+dest_files=["res://.godot/imported/when_button_pressed.dialogue-098f4667e95b4e9d089e4235d62d0d54.tres"]
+
+[params]
+
+defaults=true

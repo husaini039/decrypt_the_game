@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://buwv37pdqmx50"
+path="res://.godot/imported/no_content_frame.dialogue-c52933da81975aba243be19e471b1518.tres"
+
+[deps]
+
+source_file="res://dialog/no_content_frame.dialogue"
+dest_files=["res://.godot/imported/no_content_frame.dialogue-c52933da81975aba243be19e471b1518.tres"]
+
+[params]
+
+defaults=true

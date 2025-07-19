@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://t616i8gtj3xu"]
+
+[ext_resource type="Script" uid="uid://olqda72oquhq" path="res://texture_rect.gd" id="2_lug3a"]
+
+[node name="TextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(50, 100)
+offset_right = 50.0
+offset_bottom = 100.0
+rotation = -3.14159
+script = ExtResource("2_lug3a")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 100.0
+mouse_filter = 2

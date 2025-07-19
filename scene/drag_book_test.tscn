@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://crc2f7t86kuc3"]
+
+[ext_resource type="Script" uid="uid://dxmlq7xdfe0bw" path="res://scene/drag_book_test.gd" id="1_08su3"]
+[ext_resource type="Texture2D" uid="uid://d3tjbvq7ci4kp" path="res://asset/book/8b_book.JPG" id="1_dolac"]
+[ext_resource type="Script" uid="uid://bi15v7f7cuqn4" path="res://area_2d.gd" id="2_08su3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cmda"]
+size = Vector2(40, 136)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_08su3")
+
+[node name="8bBook" type="Sprite2D" parent="."]
+position = Vector2(128, 104)
+texture = ExtResource("1_dolac")
+
+[node name="Area2D" type="Area2D" parent="8bBook"]
+script = ExtResource("2_08su3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="8bBook/Area2D"]
+shape = SubResource("RectangleShape2D_2cmda")

@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://dncajypb2pw6t"]
+
+[ext_resource type="Script" uid="uid://cpgupfsjcnarm" path="res://scene/cabinet_zoom.gd" id="1_4na37"]
+[ext_resource type="Texture2D" uid="uid://cruc3f6kvmemk" path="res://asset/background/readingRoom.jpg" id="1_w62ru"]
+[ext_resource type="Texture2D" uid="uid://cgxmsdmgj2p1q" path="res://asset/decoration/IMG_2806.PNG" id="2_2uljr"]
+[ext_resource type="Texture2D" uid="uid://0lw3qvtgpet6" path="res://asset/decoration/from_top_cabinet.PNG" id="2_us6jk"]
+[ext_resource type="Texture2D" uid="uid://cf43adltjmtow" path="res://asset/hammer.PNG" id="4_4na37"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="5_fxcva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxcva"]
+size = Vector2(411.419, 167.816)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2uljr"]
+radius = 270.072
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4na37"]
+size = Vector2(45, 54)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4na37")
+
+[node name="ReadingRoom" type="Sprite2D" parent="."]
+position = Vector2(264, -624)
+scale = Vector2(1.63381, 3.72062)
+texture = ExtResource("1_w62ru")
+metadata/_edit_lock_ = true
+
+[node name="cabinet_close" type="Sprite2D" parent="."]
+position = Vector2(192.025, 513.016)
+scale = Vector2(1.47781, 1.47781)
+texture = ExtResource("2_2uljr")
+
+[node name="Area2D" type="Area2D" parent="cabinet_close"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cabinet_close/Area2D"]
+position = Vector2(303.134, 18.2597)
+shape = SubResource("RectangleShape2D_fxcva")
+
+[node name="FromTopCabinet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(193.65, 512)
+scale = Vector2(1.46944, 1.46944)
+texture = ExtResource("2_us6jk")
+
+[node name="Hammer" type="Sprite2D" parent="FromTopCabinet"]
+position = Vector2(315.766, 54.4424)
+rotation = -0.71965
+scale = Vector2(0.22719, 0.22719)
+texture = ExtResource("4_4na37")
+
+[node name="Area2D" type="Area2D" parent="FromTopCabinet/Hammer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FromTopCabinet/Hammer/Area2D"]
+position = Vector2(25.6463, -73.1162)
+shape = SubResource("CircleShape2D_2uljr")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("5_fxcva")
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-553.5, -3.05176e-05)
+shape = SubResource("RectangleShape2D_4na37")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(540, -3.05176e-05)
+shape = SubResource("RectangleShape2D_4na37")
+
+[connection signal="input_event" from="cabinet_close/Area2D" to="." method="click_cabinet"]
+[connection signal="input_event" from="FromTopCabinet/Hammer/Area2D" to="." method="click_hammer"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="exit"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]

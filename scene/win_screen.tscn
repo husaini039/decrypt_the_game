@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddh5kijbcvj0x"]
+
+[ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="1_dtvbk"]
+[ext_resource type="Script" uid="uid://bk5k6t7sxdcmp" path="res://scene/win_screen.gd" id="1_vbj0e"]
+[ext_resource type="Texture2D" uid="uid://dcbw85g0jld83" path="res://asset/background/filter_no_arrow.PNG" id="3_dycrn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vbj0e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1287.0
+offset_bottom = 808.0
+color = Color(0.099986, 0.099986, 0.099986, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 192.0
+offset_right = 922.0
+offset_bottom = 289.875
+theme_override_fonts/font = ExtResource("1_dtvbk")
+theme_override_font_sizes/font_size = 81
+text = "YOU ESCAPED!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 336.0
+offset_right = 1053.0
+offset_bottom = 534.75
+theme_override_fonts/font = ExtResource("1_dtvbk")
+theme_override_font_sizes/font_size = 81
+text = "YOU FINISH BEFORE THE 
+TIMER HIT 0"
+horizontal_alignment = 1
+
+[node name="leaderboard" type="Button" parent="."]
+offset_left = 648.0
+offset_top = 616.0
+offset_right = 842.0
+offset_bottom = 680.0
+text = "leaderboard"
+
+[node name="main_menu" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 616.0
+offset_right = 610.0
+offset_bottom = 680.0
+text = "main menu"
+
+[node name="FilterNoArrow" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.666667, 0.740741)
+texture = ExtResource("3_dycrn")
+
+[connection signal="pressed" from="leaderboard" to="." method="_on_leaderboard_pressed"]

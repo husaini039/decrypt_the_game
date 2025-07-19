@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcwvtpinnvvgb"]
+
+[ext_resource type="Script" uid="uid://nr5bissojgcg" path="res://scene/main_menu.gd" id="1_3er1b"]
+[ext_resource type="Texture2D" uid="uid://dj26mgp3v1wov" path="res://asset/background/mainmenu.jpg" id="2_2fwvj"]
+[ext_resource type="PackedScene" uid="uid://ctdp64m27jddo" path="res://scene/fade_transition.tscn" id="2_hxu56"]
+[ext_resource type="Texture2D" uid="uid://cjj4dg36k761r" path="res://asset/background/bg_main.jpg" id="3_14wem"]
+[ext_resource type="FontFile" uid="uid://3hjaa4twmkdf" path="res://asset/UI/Sprout Lands - UI Pack - Basic pack/fonts/WestoriademoRegular-nAdWJ.otf" id="4_2atga"]
+[ext_resource type="Texture2D" uid="uid://dcbw85g0jld83" path="res://asset/background/filter_no_arrow.PNG" id="5_by01r"]
+[ext_resource type="PackedScene" uid="uid://dxjxnx3urwtc7" path="res://scene/shader.tscn" id="6_2atga"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_3er1b")
+
+[node name="Mainmenu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 400)
+scale = Vector2(1, 0.937866)
+texture = ExtResource("2_2fwvj")
+
+[node name="BgMain" type="Sprite2D" parent="."]
+position = Vector2(639.667, 480.75)
+scale = Vector2(2.09695, 2.09695)
+texture = ExtResource("3_14wem")
+metadata/_edit_lock_ = true
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 256.0
+offset_top = -24.0
+offset_right = 296.0
+offset_bottom = 16.0
+
+[node name="StartButton" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 336.0
+offset_right = 824.0
+offset_bottom = 424.0
+theme_override_fonts/font = ExtResource("4_2atga")
+theme_override_font_sizes/font_size = 71
+text = "start"
+
+[node name="About" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 432.0
+offset_right = 824.0
+offset_bottom = 520.0
+theme_override_fonts/font = ExtResource("4_2atga")
+theme_override_font_sizes/font_size = 56
+text = "Leaderboard"
+
+[node name="Exit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 528.0
+offset_right = 824.0
+offset_bottom = 608.0
+theme_override_fonts/font = ExtResource("4_2atga")
+theme_override_font_sizes/font_size = 51
+text = "Exit
+"
+
+[node name="FilterNoArrow" type="Sprite2D" parent="ButtonManager"]
+position = Vector2(384, 423.5)
+scale = Vector2(0.666667, 0.741667)
+texture = ExtResource("5_by01r")
+
+[node name="Node2D" parent="." instance=ExtResource("6_2atga")]
+position = Vector2(608, 392)
+scale = Vector2(0.666667, 0.741667)
+
+[node name="title" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 120.0
+offset_right = 1120.0
+offset_bottom = 191.458
+theme_override_colors/font_shadow_color = Color(0.473976, 0.473976, 0.473976, 1)
+theme_override_fonts/font = ExtResource("4_2atga")
+theme_override_font_sizes/font_size = 70
+text = "DECRYPT TO ESCAPE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 191.0
+offset_right = 1120.0
+offset_bottom = 262.458
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_2atga")
+theme_override_font_sizes/font_size = 25
+text = "An interactive escape game using block cipher"
+horizontal_alignment = 1
+
+[node name="FadeTransition" parent="." instance=ExtResource("2_hxu56")]
+visible = false
+
+[node name="fade_timer" type="Timer" parent="FadeTransition"]
+wait_time = 2.5
+
+[connection signal="pressed" from="ButtonManager/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonManager/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="ButtonManager/Exit" to="." method="_on_exit_pressed"]
+[connection signal="timeout" from="FadeTransition/fade_timer" to="." method="_on_fade_timer_timeout"]

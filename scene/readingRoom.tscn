@@ -1,0 +1,134 @@
+[gd_scene load_steps=15 format=3 uid="uid://dfcfcqq52ud3e"]
+
+[ext_resource type="Script" uid="uid://bvmol4bhljiew" path="res://scene/readingRoomArrow.gd" id="1_3h1uo"]
+[ext_resource type="Texture2D" uid="uid://cruc3f6kvmemk" path="res://asset/background/readingRoom.jpg" id="1_m2ipe"]
+[ext_resource type="Texture2D" uid="uid://b2s5wa1mift0y" path="res://asset/decoration/arrow.png" id="2_gi0c5"]
+[ext_resource type="Texture2D" uid="uid://d1fjme522j36s" path="res://asset/decoration/cabinet.PNG" id="4_d7xf1"]
+[ext_resource type="Texture2D" uid="uid://bqcc1o2bsnjlf" path="res://new_asset/frame_puzzle/pieces2.PNG" id="4_j65ey"]
+[ext_resource type="Texture2D" uid="uid://bf411kw1aipeq" path="res://asset/decoration/table.PNG" id="5_6abia"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="6_6abia"]
+[ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="8_7vm5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi0c5"]
+size = Vector2(226.415, 679.245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h1uo"]
+size = Vector2(226.415, 603.774)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j65ey"]
+radius = 145.447
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vm5g"]
+size = Vector2(289, 265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j65ey"]
+size = Vector2(441, 112.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6abia"]
+size = Vector2(45.5001, 54)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3h1uo")
+metadata/_edit_horizontal_guides_ = [384.0]
+
+[node name="ReadingRoom" type="Sprite2D" parent="."]
+position = Vector2(640, 401)
+texture = ExtResource("1_m2ipe")
+metadata/_edit_lock_ = true
+
+[node name="arrowRight" type="Sprite2D" parent="."]
+position = Vector2(1200, 384)
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("2_gi0c5")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="arrowRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRight/Area2D"]
+position = Vector2(-37.7363, -37.7358)
+shape = SubResource("RectangleShape2D_gi0c5")
+
+[node name="arrowLeft" type="Sprite2D" parent="."]
+position = Vector2(80, 384)
+scale = Vector2(0.106, 0.106)
+texture = ExtResource("2_gi0c5")
+
+[node name="Area2D" type="Area2D" parent="arrowLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowLeft/Area2D"]
+position = Vector2(37.7358, 0)
+shape = SubResource("RectangleShape2D_3h1uo")
+
+[node name="Pieces2" type="Sprite2D" parent="."]
+position = Vector2(1024, 632)
+rotation = 0.0123704
+scale = Vector2(0.202907, 0.202907)
+texture = ExtResource("4_j65ey")
+
+[node name="Area2D" type="Area2D" parent="Pieces2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces2/Area2D"]
+position = Vector2(156.663, 220.01)
+shape = SubResource("CircleShape2D_j65ey")
+
+[node name="Cabinet" type="Sprite2D" parent="."]
+position = Vector2(568, 320)
+texture = ExtResource("4_d7xf1")
+
+[node name="Area2D" type="Area2D" parent="Cabinet"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabinet/Area2D"]
+position = Vector2(311.5, 131.5)
+shape = SubResource("RectangleShape2D_7vm5g")
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(648, 320)
+texture = ExtResource("5_6abia")
+
+[node name="Area2D" type="Area2D" parent="Table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table/Area2D"]
+position = Vector2(-200, 207.75)
+shape = SubResource("RectangleShape2D_j65ey")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("6_6abia")
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-549, 0)
+shape = SubResource("RectangleShape2D_6abia")
+
+[node name="Area2D2" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
+position = Vector2(540, 0)
+shape = SubResource("RectangleShape2D_6abia")
+
+[node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_7vm5g")
+
+[connection signal="input_event" from="arrowRight/Area2D" to="." method="arrowRight"]
+[connection signal="mouse_entered" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="arrowLeft/Area2D" to="." method="arrowLeft"]
+[connection signal="mouse_entered" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Pieces2/Area2D" to="." method="click_piece2"]
+[connection signal="mouse_entered" from="Pieces2/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Pieces2/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Cabinet/Area2D" to="." method="locked_cabinet"]
+[connection signal="mouse_entered" from="Cabinet/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Cabinet/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Table/Area2D" to="." method="on_click_white_table"]
+[connection signal="mouse_entered" from="Table/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Table/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D2" to="." method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D2" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D2" to="." method="_on_area_2d_mouse_exited"]

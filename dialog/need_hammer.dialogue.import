@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://n1rs1760qahf"
+path="res://.godot/imported/need_hammer.dialogue-da8414c25388b62a527c1331a483b2b5.tres"
+
+[deps]
+
+source_file="res://dialog/need_hammer.dialogue"
+dest_files=["res://.godot/imported/need_hammer.dialogue-da8414c25388b62a527c1331a483b2b5.tres"]
+
+[params]
+
+defaults=true

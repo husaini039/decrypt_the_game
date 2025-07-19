@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdl0l64dd8s7b"
+path="res://.godot/imported/locked_cabinet.dialogue-a6b35f1c11e1ec8ade31fe4ee2b3ee1d.tres"
+
+[deps]
+
+source_file="res://dialog/locked_cabinet.dialogue"
+dest_files=["res://.godot/imported/locked_cabinet.dialogue-a6b35f1c11e1ec8ade31fe4ee2b3ee1d.tres"]
+
+[params]
+
+defaults=true

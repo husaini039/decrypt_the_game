@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwm7tsolmiayh"]
+
+[ext_resource type="PackedScene" uid="uid://6r6er3h6m6da" path="res://scene/drop_zone.tscn" id="1_5wm4d"]
+[ext_resource type="PackedScene" uid="uid://bto3nwvhaw1xl" path="res://scene/drag_book.tscn" id="2_lck4h"]
+[ext_resource type="PackedScene" uid="uid://crc2f7t86kuc3" path="res://scene/drag_book_test.tscn" id="3_lck4h"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="dropZone" parent="." instance=ExtResource("1_5wm4d")]
+position = Vector2(440, 344)
+
+[node name="dropZone2" parent="." instance=ExtResource("1_5wm4d")]
+position = Vector2(640, 344)
+gizmo_extents = 39.4
+
+[node name="Node2D" parent="." instance=ExtResource("2_lck4h")]
+position = Vector2(72, 120)
+
+[node name="Node2D2" parent="." instance=ExtResource("3_lck4h")]
+position = Vector2(192, 120)

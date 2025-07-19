@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dr7bx8gsq7d5u"
+path="res://.godot/imported/hammer_pickup_reaction.dialogue-b1505614ed728b91aae4f3db9cc6003d.tres"
+
+[deps]
+
+source_file="res://dialog/hammer_pickup_reaction.dialogue"
+dest_files=["res://.godot/imported/hammer_pickup_reaction.dialogue-b1505614ed728b91aae4f3db9cc6003d.tres"]
+
+[params]
+
+defaults=true

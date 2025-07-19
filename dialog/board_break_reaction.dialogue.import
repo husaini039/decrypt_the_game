@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bov8hop1udfn3"
+path="res://.godot/imported/board_break_reaction.dialogue-f181548aa856df334f29e3510549b602.tres"
+
+[deps]
+
+source_file="res://dialog/board_break_reaction.dialogue"
+dest_files=["res://.godot/imported/board_break_reaction.dialogue-f181548aa856df334f29e3510549b602.tres"]
+
+[params]
+
+defaults=true

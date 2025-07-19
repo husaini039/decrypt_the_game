@@ -1,0 +1,230 @@
+[gd_scene load_steps=20 format=3 uid="uid://sxocw7oovvka"]
+
+[ext_resource type="Script" uid="uid://c25nmmh3h6jv3" path="res://scene/arrowKitchen.gd" id="1_5pn3r"]
+[ext_resource type="Texture2D" uid="uid://do3rxg688c2nn" path="res://asset/background/kitchen_bg.jpg" id="1_crp0g"]
+[ext_resource type="Texture2D" uid="uid://b2s5wa1mift0y" path="res://asset/decoration/arrow.png" id="2_losjg"]
+[ext_resource type="Texture2D" uid="uid://85x763n58glv" path="res://asset/background/glass_bg.jpg" id="3_cn2no"]
+[ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="4_wnebr"]
+[ext_resource type="Texture2D" uid="uid://cxkv2s5vcjmgv" path="res://asset/decoration/window.png" id="6_ig7eq"]
+[ext_resource type="Texture2D" uid="uid://ci1lf4lymimb7" path="res://asset/decoration/glass_uncropped.png" id="8_cn2no"]
+[ext_resource type="Texture2D" uid="uid://noc566k3yhkh" path="res://asset/panel_stuff/panel_no_cover.PNG" id="9_70nra"]
+[ext_resource type="Texture2D" uid="uid://b82h8g0brqrk3" path="res://asset/panel_stuff/panel_cover.PNG" id="10_p8jqm"]
+[ext_resource type="Texture2D" uid="uid://db4rrjydwyd7t" path="res://new_asset/frame_puzzle/pieces4.PNG" id="11_p8jqm"]
+[ext_resource type="Texture2D" uid="uid://d05y8dmmpoks2" path="res://screwdriver.PNG" id="12_v3ms5"]
+[ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="12_y1e7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnebr"]
+size = Vector2(309.346, 774.701)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek7yq"]
+size = Vector2(308.101, 842.106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiegy"]
+size = Vector2(41, 45.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7eq"]
+size = Vector2(49.827, 225.93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8jqm"]
+size = Vector2(221.46, 291.214)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1e7p"]
+radius = 171.56
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1nu3"]
+radius = 74.0244
+height = 559.853
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5pn3r")
+metadata/_edit_vertical_guides_ = [64.0]
+metadata/_edit_horizontal_guides_ = [384.0]
+
+[node name="KitchenBg" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+texture = ExtResource("1_crp0g")
+metadata/_edit_lock_ = true
+
+[node name="GlassBg" type="Sprite2D" parent="."]
+modulate = Color(0.862745, 0.760784, 1, 0.968627)
+position = Vector2(449.544, 332.555)
+scale = Vector2(0.235088, 0.326953)
+texture = ExtResource("3_cn2no")
+metadata/_edit_lock_ = true
+
+[node name="arrowRight" type="Sprite2D" parent="."]
+position = Vector2(1200, 384)
+scale = Vector2(0.144572, 0.144572)
+texture = ExtResource("2_losjg")
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="arrowRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRight/Area2D"]
+position = Vector2(-66.6689, 0)
+shape = SubResource("RectangleShape2D_wnebr")
+
+[node name="arrowLeft" type="Sprite2D" parent="."]
+position = Vector2(79.375, 384.625)
+scale = Vector2(0.133, 0.133)
+texture = ExtResource("2_losjg")
+
+[node name="Area2D" type="Area2D" parent="arrowLeft"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowLeft/Area2D"]
+position = Vector2(31.0995, -4.69922)
+shape = SubResource("RectangleShape2D_ek7yq")
+
+[node name="FilterFront" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+texture = ExtResource("4_wnebr")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D"]
+position = Vector2(-549, -7.62939e-06)
+shape = SubResource("RectangleShape2D_kiegy")
+
+[node name="Area2D2" type="Area2D" parent="FilterFront"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/Area2D2"]
+position = Vector2(540, -7.62939e-06)
+shape = SubResource("RectangleShape2D_kiegy")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(448, 344)
+scale = Vector2(0.537234, 0.537234)
+texture = ExtResource("6_ig7eq")
+
+[node name="glass_crack_pattern" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 350.0
+offset_top = 234.438
+offset_right = 390.0
+offset_bottom = 274.438
+
+[node name="glass_crack" type="Sprite2D" parent="glass_crack_pattern"]
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack2" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(65, 0)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack3" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(132, 0)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack4" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(-1, 67.562)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack5" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(131, 67.562)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack6" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(198, 67.562)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack7" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(198, 201.562)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="glass_crack8" type="Sprite2D" parent="glass_crack_pattern"]
+position = Vector2(132, 201.562)
+scale = Vector2(0.52439, 0.508436)
+texture = ExtResource("8_cn2no")
+
+[node name="PanelNoCover" type="Sprite2D" parent="."]
+position = Vector2(719, 320)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("9_70nra")
+
+[node name="Area2D" type="Area2D" parent="PanelNoCover"]
+visible = false
+position = Vector2(306.349, 50.7936)
+scale = Vector2(4.5873, 1.29272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelNoCover/Area2D"]
+position = Vector2(0, -4.91153)
+shape = SubResource("RectangleShape2D_ig7eq")
+
+[node name="PanelCover" type="Sprite2D" parent="PanelNoCover"]
+position = Vector2(2, -1)
+texture = ExtResource("10_p8jqm")
+
+[node name="Area2D" type="Area2D" parent="PanelNoCover/PanelCover"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PanelNoCover/PanelCover/Area2D"]
+position = Vector2(306.317, 52.2183)
+shape = SubResource("RectangleShape2D_p8jqm")
+
+[node name="PanelCover_drop" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(792, 460)
+rotation = 1.5708
+scale = Vector2(0.609167, 0.609167)
+texture = ExtResource("10_p8jqm")
+
+[node name="Pieces4" type="Sprite2D" parent="."]
+position = Vector2(170, 691)
+rotation = -1.30998
+scale = Vector2(0.133826, 0.133826)
+texture = ExtResource("11_p8jqm")
+
+[node name="Area2D" type="Area2D" parent="Pieces4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pieces4/Area2D"]
+position = Vector2(47.9267, -0.759016)
+shape = SubResource("CircleShape2D_y1e7p")
+
+[node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_y1e7p")
+
+[node name="Screwdriver" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1104, 664)
+rotation = -0.407244
+scale = Vector2(0.192109, 0.192109)
+texture = ExtResource("12_v3ms5")
+
+[node name="Area2D" type="Area2D" parent="Screwdriver"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screwdriver/Area2D"]
+position = Vector2(126.333, 48.8259)
+rotation = 0.734844
+shape = SubResource("CapsuleShape2D_s1nu3")
+
+[connection signal="input_event" from="arrowRight/Area2D" to="." method="arrowRight"]
+[connection signal="mouse_entered" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="arrowLeft/Area2D" to="." method="arrowLeft"]
+[connection signal="mouse_entered" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="FilterFront/Area2D2" to="." method="_on_area_2d_2_input_event"]
+[connection signal="mouse_entered" from="FilterFront/Area2D2" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="FilterFront/Area2D2" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="PanelNoCover/Area2D" to="." method="go_panel_scene"]
+[connection signal="mouse_entered" from="PanelNoCover/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="PanelNoCover/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="PanelNoCover/PanelCover/Area2D" to="." method="click_locked_panel"]
+[connection signal="mouse_entered" from="PanelNoCover/PanelCover/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="PanelNoCover/PanelCover/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Pieces4/Area2D" to="." method="click_piece4"]
+[connection signal="mouse_entered" from="Pieces4/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Pieces4/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="Screwdriver/Area2D" to="." method="click_screw"]
