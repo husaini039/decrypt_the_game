@@ -72,6 +72,7 @@ shape = SubResource("RectangleShape2D_c8vdw")
 stream = ExtResource("6_njsuc")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 512.0
 offset_top = 80.0
 offset_right = 613.0
