@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://sxocw7oovvka"]
+[gd_scene load_steps=18 format=3 uid="uid://sxocw7oovvka"]
 
 [ext_resource type="Script" uid="uid://c25nmmh3h6jv3" path="res://scene/arrowKitchen.gd" id="1_5pn3r"]
 [ext_resource type="Texture2D" uid="uid://do3rxg688c2nn" path="res://asset/background/kitchen_bg.jpg" id="1_crp0g"]
-[ext_resource type="Texture2D" uid="uid://b2s5wa1mift0y" path="res://asset/decoration/arrow.png" id="2_losjg"]
 [ext_resource type="Texture2D" uid="uid://85x763n58glv" path="res://asset/background/glass_bg.jpg" id="3_cn2no"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="4_wnebr"]
 [ext_resource type="Texture2D" uid="uid://cxkv2s5vcjmgv" path="res://asset/decoration/window.png" id="6_ig7eq"]
@@ -12,12 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://db4rrjydwyd7t" path="res://new_asset/frame_puzzle/pieces4.PNG" id="11_p8jqm"]
 [ext_resource type="Texture2D" uid="uid://d05y8dmmpoks2" path="res://screwdriver.PNG" id="12_v3ms5"]
 [ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="12_y1e7p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnebr"]
-size = Vector2(309.346, 774.701)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek7yq"]
-size = Vector2(308.101, 842.106)
+[ext_resource type="AudioStream" uid="uid://uh3j6api6m15" path="res://asset/sfx/metal_pickup.wav" id="13_v3ms5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kiegy"]
 size = Vector2(41, 45.5)
@@ -51,29 +45,6 @@ position = Vector2(449.544, 332.555)
 scale = Vector2(0.235088, 0.326953)
 texture = ExtResource("3_cn2no")
 metadata/_edit_lock_ = true
-
-[node name="arrowRight" type="Sprite2D" parent="."]
-position = Vector2(1200, 384)
-scale = Vector2(0.144572, 0.144572)
-texture = ExtResource("2_losjg")
-flip_h = true
-
-[node name="Area2D" type="Area2D" parent="arrowRight"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowRight/Area2D"]
-position = Vector2(-66.6689, 0)
-shape = SubResource("RectangleShape2D_wnebr")
-
-[node name="arrowLeft" type="Sprite2D" parent="."]
-position = Vector2(79.375, 384.625)
-scale = Vector2(0.133, 0.133)
-texture = ExtResource("2_losjg")
-
-[node name="Area2D" type="Area2D" parent="arrowLeft"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowLeft/Area2D"]
-position = Vector2(31.0995, -4.69922)
-shape = SubResource("RectangleShape2D_ek7yq")
 
 [node name="FilterFront" type="Sprite2D" parent="."]
 position = Vector2(640, 400)
@@ -189,9 +160,6 @@ texture = ExtResource("11_p8jqm")
 position = Vector2(47.9267, -0.759016)
 shape = SubResource("CircleShape2D_y1e7p")
 
-[node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_y1e7p")
-
 [node name="Screwdriver" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1104, 664)
@@ -206,12 +174,16 @@ position = Vector2(126.333, 48.8259)
 rotation = 0.734844
 shape = SubResource("CapsuleShape2D_s1nu3")
 
-[connection signal="input_event" from="arrowRight/Area2D" to="." method="arrowRight"]
-[connection signal="mouse_entered" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="arrowRight/Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="input_event" from="arrowLeft/Area2D" to="." method="arrowLeft"]
-[connection signal="mouse_entered" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="arrowLeft/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_y1e7p")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1104, 664)
+rotation = -0.407244
+scale = Vector2(0.192109, 0.192109)
+stream = ExtResource("13_v3ms5")
+pitch_scale = 0.93
+
 [connection signal="input_event" from="FilterFront/Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="FilterFront/Area2D" to="." method="_on_area_2d_mouse_exited"]
@@ -228,3 +200,5 @@ shape = SubResource("CapsuleShape2D_s1nu3")
 [connection signal="mouse_entered" from="Pieces4/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Pieces4/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="Screwdriver/Area2D" to="." method="click_screw"]
+[connection signal="mouse_entered" from="Screwdriver/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Screwdriver/Area2D" to="." method="_on_area_2d_mouse_exited"]

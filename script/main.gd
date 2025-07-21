@@ -27,15 +27,19 @@ func _on_fade_out_finished(anim_name: String) -> void:
 
 func clickSticky(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$pickup.play()
 		$Sticky.visible = false
 		$StickyPopup.visible = true
 		$Door/doorArea.visible = false
+		$Board/Area2D.visible = false
 
 
 func close_popup(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$pickup2.play()
 		$Sticky.visible = true
 		$Door/doorArea.visible = true
+		$Board/Area2D.visible = true
 		$StickyPopup.visible = false
 		
 		

@@ -100,7 +100,7 @@ func _on_area_enter_input_event(viewport: Node, event: InputEvent, shape_idx: in
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		var entered_code = get_node("Label").text
 		$resultSound.play()
-		if entered_code == "123":
+		if entered_code == "125":
 			get_node("Label").text = ""
 			$correctSound.play()
 			get_node("resultLabel").text = "correct!"

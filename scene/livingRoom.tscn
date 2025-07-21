@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://dv0wvav86xgrl" path="res://asset/decoration/almari.png" id="17_0453d"]
 [ext_resource type="Texture2D" uid="uid://cw0qsnu8qx7af" path="res://new_asset/frame_puzzle/frame_complete.PNG" id="17_bs3i6"]
 [ext_resource type="Texture2D" uid="uid://b7f7unxx41ic0" path="res://asset/decoration/button1.png" id="19_bs3i6"]
+[ext_resource type="AudioStream" uid="uid://dyyckw18o41a8" path="res://asset/sfx/glass_break.wav" id="19_ra3dr"]
 [ext_resource type="Texture2D" uid="uid://d0xhaaknalnvc" path="res://asset/decoration/button2.png" id="20_ra3dr"]
 [ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="21_3tx3w"]
-[ext_resource type="AudioStream" uid="uid://f1sln3w2077a" path="res://asset/sfx/metal_clank.mp3" id="21_ra3dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybdro"]
 size = Vector2(231.884, 753.624)
@@ -213,8 +213,7 @@ position = Vector2(-6, 185)
 texture = ExtResource("20_ra3dr")
 
 [node name="metal_fell" type="AudioStreamPlayer2D" parent="Almari"]
-stream = ExtResource("21_ra3dr")
-pitch_scale = 1.23
+stream = ExtResource("19_ra3dr")
 
 [node name="YellowPaper" type="Sprite2D" parent="."]
 visible = false

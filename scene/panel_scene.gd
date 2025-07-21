@@ -74,7 +74,9 @@ func check_win() -> void:
 			
 	await get_tree().create_timer(.3).timeout
 	Global.isPanelPuzzle = true
-	get_tree().change_scene_to_file("res://scene/kitchen.tscn")
+	if Global.isPanelPuzzle:
+		$done.play()
+		DialogueManager.show_dialogue_balloon(load("res://dialog/panel_puzzle_done.dialogue"), "start")
 
 
 
@@ -345,3 +347,43 @@ func _on_reset_pressed() -> void:
 func left(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().change_scene_to_file("res://scene/kitchen.tscn")
+
+#click on red note
+func click_clue1(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if !$notes/green_note.visible:
+			$pickup.play()
+			$notes/red_note.visible = true
+			$notes/XorClue/Area2D.visible = false
+			$Control2.visible = false
+
+func close_red_note(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$notes/red_note.visible = false
+		$pickup2.play()
+		$notes/XorClue/Area2D.visible = true
+		$Control2.visible = true
+
+
+func click_green(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if !$notes/red_note.visible:
+			$pickup.play()
+			$notes/green_note.visible = true
+			$notes/XorClue2/Area2D.visible = false
+			$Control2.visible = false
+
+
+func close_green_note(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$notes/green_note.visible = false
+		$pickup2.play()
+		$notes/XorClue2/Area2D.visible = true
+		$Control2.visible = true
+
+
+func _on_area_2d_mouse_entered() -> void:
+	Global.set_hand_cursor()
+
+func _on_area_2d_mouse_exited() -> void:
+	Global.reset_cursor()

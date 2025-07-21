@@ -6,10 +6,12 @@ func _ready() -> void:
 		$PanelNoCover/PanelCover.visible = false
 		$PanelCover_drop.visible = true
 		$glass_crack_pattern.visible = true
-
-		if not Global.cracked_window:
+		
+		if !Global.cracked_window:
 			DialogueManager.show_dialogue_balloon(load("res://dialog/cracked_window_reaction.dialogue"), "start")
 			Global.cracked_window = true
+
+	
 	
 	if Global.pieces4:
 		$Pieces4.visible = false
@@ -75,4 +77,6 @@ func click_locked_panel(viewport: Node, event: InputEvent, shape_idx: int) -> vo
 func click_screw(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		Global.isScrewdriver = true
+		$pickup.play()
 		$Screwdriver.visible = false
+		

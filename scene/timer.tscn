@@ -1,22 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://h6sci4ykkvpo"]
+[gd_scene load_steps=3 format=3 uid="uid://h6sci4ykkvpo"]
 
 [ext_resource type="Script" uid="uid://do0uj616o26ww" path="res://scene/timer_new.gd" id="1_4djcp"]
-[ext_resource type="Texture2D" uid="uid://cy31l63srl1o1" path="res://asset/pcbg1.png" id="2_4djcp"]
 [ext_resource type="FontFile" uid="uid://doyo6xl6nbo3y" path="res://font/vinizinho.ttf" id="3_4djcp"]
 
 [node name="timer" type="Node2D"]
 script = ExtResource("1_4djcp")
-
-[node name="Pcbg1" type="Sprite2D" parent="."]
-position = Vector2(959.5, 219.5)
-scale = Vector2(0.0911459, 0.0712963)
-texture = ExtResource("2_4djcp")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 905.0
 offset_top = 193.0
 offset_right = 1010.0
 offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4djcp")
 theme_override_font_sizes/font_size = 70
 text = "30:00"

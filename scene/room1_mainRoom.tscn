@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ci6bgcfpyc685"]
+[gd_scene load_steps=31 format=3 uid="uid://ci6bgcfpyc685"]
 
 [ext_resource type="Texture2D" uid="uid://8g6uj8ll88dk" path="res://asset/background/background_room1.jpg" id="1_0d0by"]
 [ext_resource type="Script" uid="uid://jf362uo1xwn2" path="res://script/main.gd" id="1_nvme4"]
@@ -15,15 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://ceeqlqwoxoyh3" path="res://new_asset/sticky_blue.PNG" id="13_nb3fk"]
 [ext_resource type="Texture2D" uid="uid://p21sxhgh5exa" path="res://new_asset/frame_puzzle/pieces3.PNG" id="14_01gnm"]
 [ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="15_2aqo6"]
+[ext_resource type="Texture2D" uid="uid://dx5c1tih0kcqd" path="res://asset/decoration/timer_panel.PNG" id="15_2g0ms"]
 [ext_resource type="PackedScene" uid="uid://h6sci4ykkvpo" path="res://scene/timer.tscn" id="16_thocl"]
 [ext_resource type="Texture2D" uid="uid://ct3dah2uskerd" path="res://asset/decoration/keypad.PNG" id="17_8iusl"]
 [ext_resource type="PackedScene" uid="uid://p6dyldhqhwki" path="res://scene/pause_scene.tscn" id="18_x7jop"]
+[ext_resource type="Texture2D" uid="uid://coudtiqq28v6" path="res://new_asset/doorOPen.PNG" id="20_edrud"]
+[ext_resource type="AudioStream" uid="uid://cpnxa85qpt3y7" path="res://asset/sfx/paper_pickup.wav" id="21_pmntb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8vdw"]
 size = Vector2(175, 259)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thocl"]
-size = Vector2(263.273, 130.247)
+size = Vector2(263.273, 165.482)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc8tj"]
 size = Vector2(146.752, 683.761)
@@ -41,7 +44,7 @@ size = Vector2(45, 54.25)
 radius = 139.459
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njsuc"]
-size = Vector2(264, 424)
+size = Vector2(872, 609)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7jop"]
 size = Vector2(390.266, 597.345)
@@ -80,24 +83,26 @@ offset_bottom = 138.0
 text = "debug lost"
 
 [node name="Board" type="Sprite2D" parent="."]
-position = Vector2(696, 304)
+position = Vector2(702, 224)
+rotation = -0.262276
 scale = Vector2(1, 1.03556)
 texture = ExtResource("3_4jsab")
 
 [node name="Board2" type="Sprite2D" parent="Board"]
-position = Vector2(-24, 38.6266)
+position = Vector2(-17.5597, 59.4384)
 texture = ExtResource("3_4jsab")
 
 [node name="Board3" type="Sprite2D" parent="Board"]
-position = Vector2(-592, -61.8026)
-rotation = 3.13985
+position = Vector2(-631.207, -38.6535)
+rotation = 3.14512
 texture = ExtResource("3_4jsab")
 
 [node name="Area2D" type="Area2D" parent="Board"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Area2D"]
-position = Vector2(-303.344, -33.3509)
+position = Vector2(-307.904, -16.3334)
 rotation = 0.261799
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_thocl")
 debug_color = Color(1.92523e-07, 0.613868, 0.611755, 0.42)
 
@@ -174,7 +179,7 @@ texture = ExtResource("13_nb3fk")
 [node name="stickyPopup" type="Area2D" parent="StickyPopup"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StickyPopup/stickyPopup"]
-position = Vector2(44, 36)
+position = Vector2(7, 0.5)
 shape = SubResource("RectangleShape2D_njsuc")
 
 [node name="keypad_door" type="Sprite2D" parent="."]
@@ -189,6 +194,11 @@ texture = ExtResource("17_8iusl")
 position = Vector2(35.8408, -3.9823)
 shape = SubResource("RectangleShape2D_x7jop")
 
+[node name="TimerPanel" type="Sprite2D" parent="."]
+position = Vector2(966, 219)
+scale = Vector2(0.215556, 0.215556)
+texture = ExtResource("15_2g0ms")
+
 [node name="timer" parent="." instance=ExtResource("16_thocl")]
 
 [node name="pieces_pickup" type="AudioStreamPlayer2D" parent="."]
@@ -200,6 +210,19 @@ visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("18_x7jop")]
 visible = false
+
+[node name="DoorOPen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(692, 365)
+texture = ExtResource("20_edrud")
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_pmntb")
+pitch_scale = 1.79
+
+[node name="pickup2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_pmntb")
+pitch_scale = 0.74
 
 [connection signal="input_event" from="Door/doorArea" to="Door/doorArea" method="_on_input_event"]
 [connection signal="mouse_entered" from="Door/doorArea" to="." method="_on_door_area_mouse_entered"]

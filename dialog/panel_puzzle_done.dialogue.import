@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cfjdh1hy8war8"
+path="res://.godot/imported/panel_puzzle_done.dialogue-f80589c76ddeed6ec28610c3c825bb5e.tres"
+
+[deps]
+
+source_file="res://dialog/panel_puzzle_done.dialogue"
+dest_files=["res://.godot/imported/panel_puzzle_done.dialogue-f80589c76ddeed6ec28610c3c825bb5e.tres"]
+
+[params]
+
+defaults=true

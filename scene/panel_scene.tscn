@@ -1,15 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://dk0ron36pr416"]
+[gd_scene load_steps=17 format=3 uid="uid://dk0ron36pr416"]
 
 [ext_resource type="Texture2D" uid="uid://do3rxg688c2nn" path="res://asset/background/kitchen_bg.jpg" id="1_66hmj"]
 [ext_resource type="Script" uid="uid://bxbtw8a7wpa3k" path="res://scene/panel_scene.gd" id="1_v7y01"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="3_cgyb5"]
 [ext_resource type="Texture2D" uid="uid://dttq8ux52v0eu" path="res://asset/panel_stuff/panel_covers.PNG" id="6_o3onp"]
 [ext_resource type="AudioStream" uid="uid://cy7mvfvids8dc" path="res://asset/sfx/click.wav" id="7_n0x62"]
+[ext_resource type="Texture2D" uid="uid://coskpamn1uwxq" path="res://asset/panel_stuff/xor_clue2.PNG" id="7_o3onp"]
 [ext_resource type="Texture2D" uid="uid://cgxet7bql5roq" path="res://asset/panel_stuff/btn_switch_off.png" id="7_yif31"]
+[ext_resource type="Texture2D" uid="uid://dla1rod1odkog" path="res://asset/panel_stuff/xor_clue.PNG" id="8_6r2cv"]
 [ext_resource type="Texture2D" uid="uid://clbe3jq4nn68a" path="res://asset/panel_stuff/btn_switch_on.png" id="8_o3onp"]
+[ext_resource type="AudioStream" uid="uid://cyjhboswfuftf" path="res://asset/sfx/screw_drop.wav" id="10_6r2cv"]
+[ext_resource type="AudioStream" uid="uid://cpnxa85qpt3y7" path="res://asset/sfx/paper_pickup.wav" id="11_6wppp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3onp"]
 size = Vector2(54.5, 54.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wppp"]
+size = Vector2(634.698, 668.405)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jr07c"]
+size = Vector2(805, 655.526)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofkid"]
+size = Vector2(931.765, 745.412)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57swr"]
+size = Vector2(888, 704)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_v7y01")
@@ -211,9 +227,82 @@ position = Vector2(1089, 0)
 position = Vector2(-549.25, -0.25)
 shape = SubResource("RectangleShape2D_o3onp")
 
+[node name="notes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 736.0
+offset_top = 400.0
+offset_right = 776.0
+offset_bottom = 440.0
+
+[node name="XorClue2" type="Sprite2D" parent="notes"]
+position = Vector2(-400, -264)
+rotation = -0.343957
+scale = Vector2(0.154615, 0.154615)
+texture = ExtResource("7_o3onp")
+
+[node name="Area2D" type="Area2D" parent="notes/XorClue2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/XorClue2/Area2D"]
+position = Vector2(2.54541, 0.224976)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6wppp")
+
+[node name="XorClue" type="Sprite2D" parent="notes"]
+position = Vector2(-392, -120)
+rotation = 0.163265
+scale = Vector2(0.124244, 0.124244)
+texture = ExtResource("8_6r2cv")
+
+[node name="Area2D" type="Area2D" parent="notes/XorClue"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/XorClue/Area2D"]
+position = Vector2(-63.1643, 10.8345)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_jr07c")
+
+[node name="green_note" type="Sprite2D" parent="notes"]
+visible = false
+position = Vector2(-48, 0)
+scale = Vector2(0.944444, 0.944444)
+texture = ExtResource("8_6r2cv")
+
+[node name="Area2D" type="Area2D" parent="notes/green_note"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/green_note/Area2D"]
+position = Vector2(-59.2941, -8.47052)
+shape = SubResource("RectangleShape2D_ofkid")
+
+[node name="red_note" type="Sprite2D" parent="notes"]
+visible = false
+position = Vector2(-112, -16)
+scale = Vector2(1, 1)
+texture = ExtResource("7_o3onp")
+
+[node name="Area2D" type="Area2D" parent="notes/red_note"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="notes/red_note/Area2D"]
+position = Vector2(12, 24)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_57swr")
+
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_n0x62")
 
+[node name="done" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_6r2cv")
+pitch_scale = 1.3
+
+[node name="pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_6wppp")
+pitch_scale = 1.79
+
+[node name="pickup2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_6wppp")
+pitch_scale = 0.74
+
+[connection signal="mouse_entered" from="Control2/Button0" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/Button0" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="Control2/Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Control2/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control2/Button3" to="." method="_on_button_3_pressed"]
@@ -232,3 +321,15 @@ stream = ExtResource("7_n0x62")
 [connection signal="pressed" from="Control2/Button16" to="." method="_on_button_16_pressed"]
 [connection signal="input_event" from="FilterFront/Area2D" to="." method="left"]
 [connection signal="input_event" from="FilterFront/Area2D2" to="." method="left"]
+[connection signal="input_event" from="notes/XorClue2/Area2D" to="." method="click_clue1"]
+[connection signal="mouse_entered" from="notes/XorClue2/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="notes/XorClue2/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="notes/XorClue/Area2D" to="." method="click_green"]
+[connection signal="mouse_entered" from="notes/XorClue/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="notes/XorClue/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="notes/green_note/Area2D" to="." method="close_green_note"]
+[connection signal="mouse_entered" from="notes/green_note/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="notes/green_note/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="notes/red_note/Area2D" to="." method="close_red_note"]
+[connection signal="mouse_entered" from="notes/red_note/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="notes/red_note/Area2D" to="." method="_on_area_2d_mouse_exited"]
