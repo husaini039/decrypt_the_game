@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dncajypb2pw6t"]
+[gd_scene load_steps=14 format=3 uid="uid://dncajypb2pw6t"]
 
 [ext_resource type="Script" uid="uid://cpgupfsjcnarm" path="res://scene/cabinet_zoom.gd" id="1_4na37"]
 [ext_resource type="Texture2D" uid="uid://cruc3f6kvmemk" path="res://asset/background/readingRoom.jpg" id="1_w62ru"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c06yio06jn50q" path="res://new_asset/IMG_2815.PNG" id="7_fxcva"]
 [ext_resource type="AudioStream" uid="uid://c4c5a86g7vj58" path="res://asset/sfx/open_cabinet.wav" id="8_xi0wu"]
 [ext_resource type="AudioStream" uid="uid://ca2d0mvmmj0im" path="res://asset/sfx/cabinet_locked.wav" id="9_dgvf6"]
+[ext_resource type="AudioStream" uid="uid://uh3j6api6m15" path="res://asset/sfx/metal_pickup.wav" id="9_lkgwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxcva"]
 size = Vector2(411.419, 167.816)
@@ -82,6 +83,12 @@ position = Vector2(192.025, 513.016)
 scale = Vector2(1.47781, 1.47781)
 stream = ExtResource("8_xi0wu")
 pitch_scale = 0.86
+
+[node name="hammer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(639.999, 540)
+scale = Vector2(1.47781, 1.47781)
+stream = ExtResource("9_lkgwe")
+pitch_scale = 0.77
 
 [node name="try" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(192.025, 513.016)

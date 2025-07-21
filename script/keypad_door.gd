@@ -109,7 +109,8 @@ func _on_area_enter_input_event(viewport: Node, event: InputEvent, shape_idx: in
 			var time_array = Global.get_time_as_minutes_seconds()
 			var score = time_array[0] * 100 + time_array[1]  # Convert to MMSS format (e.g., 29:56 becomes 2956)
 			SilentWolf.Scores.save_score(Global.player_name, score)
-			get_tree().change_scene_to_file("res://scene/win_screen.tscn")
+			Global.locked_door_panel = true
+			get_tree().change_scene_to_file("res://scene/room1_mainRoom.tscn")
 		else:
 			get_node("Label").text = ""
 			get_node("resultLabel").text = "wrong!"

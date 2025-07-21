@@ -20,6 +20,12 @@ func _ready():
 	if Global.isBoard:
 		$Board.visible = false
 		$keypad_door.visible = true
+	
+	#win scene
+	if Global.locked_door_panel:
+		$Board.visible = false
+		$Door.visible = false
+		$door_open_control.visible =true
 
 func _on_fade_out_finished(anim_name: String) -> void:
 	if anim_name == "fade_out":
@@ -104,10 +110,14 @@ func open_wood(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			$keypad_door.visible = true
 			DialogueManager.show_dialogue_balloon(load("res://dialog/board_break_reaction.dialogue"), "start")
 
-func reset() -> void:
-	Global.duration = 5
-
 
 func open_panel_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().change_scene_to_file("res://scene/keypad_maindoor_scene.tscn")
+
+
+func exit_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		fade_anim.play("fade_in")
+		await get_tree().create_timer(2).timeout
+		get_tree().change_scene_to_file("res://scene/win_screen.tscn")

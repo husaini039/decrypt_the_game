@@ -10,7 +10,7 @@ func click_cabinet(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if Global.isKey:
 			$open.play()
-			$cabinet_close.visible = true
+			$cabinet_close.visible = false
 			$FromTopCabinet.visible = true
 		else:
 			$try.play()
@@ -32,4 +32,5 @@ func click_hammer(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		Global.isHammer = true
 		DialogueManager.show_dialogue_balloon(load("res://dialog/hammer_pickup_reaction.dialogue"), "start")
+		$hammer.play()
 		$FromTopCabinet/Hammer.visible = false

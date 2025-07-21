@@ -10,6 +10,9 @@ func _ready():
 	SWITCH_ON = load("res://asset/panel_stuff/btn_switch_on.png")
 	SWITCH_OFF = load("res://asset/panel_stuff/btn_switch_off.png")
 	
+	if Global.isPanelPuzzle:
+		disable_panel()
+	
 	# Wait a frame to ensure nodes are ready
 	await get_tree().process_frame
 	
@@ -77,8 +80,25 @@ func check_win() -> void:
 	if Global.isPanelPuzzle:
 		$done.play()
 		DialogueManager.show_dialogue_balloon(load("res://dialog/panel_puzzle_done.dialogue"), "start")
-
-
+		disable_panel()
+		
+func disable_panel():
+	$Control2/Button0.disabled = true
+	$Control2/Button2.disabled = true
+	$Control2/Button3.disabled = true
+	$Control2/Button4.disabled = true
+	$Control2/Button5.disabled = true
+	$Control2/Button6.disabled = true
+	$Control2/Button7.disabled = true
+	$Control2/Button8.disabled = true
+	$Control2/Button9.disabled = true
+	$Control2/Button10.disabled = true
+	$Control2/Button11.disabled = true
+	$Control2/Button12.disabled = true
+	$Control2/Button13.disabled = true
+	$Control2/Button14.disabled = true
+	$Control2/Button15.disabled = true
+	$Control2/Button16.disabled = true
 
 func set_button_texture(btn: TextureButton, state: bool) -> void:
 	btn.texture_normal = SWITCH_ON if state else SWITCH_OFF

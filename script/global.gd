@@ -47,6 +47,8 @@ var isBoard = false
 #opening
 var done_opening = false
 
+var locked_door_panel = false
+
 
 #timer
 
@@ -132,6 +134,8 @@ func reset_globals():
 	isHammer = false
 	won_table_puzzle = false
 	isBoard = false
+	
+	locked_door_panel = false
 
 	done_opening = false
 
