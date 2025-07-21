@@ -9,9 +9,11 @@ func _ready() -> void:
 func click_cabinet(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if Global.isKey:
+			$open.play()
 			$cabinet_close.visible = true
 			$FromTopCabinet.visible = true
 		else:
+			$try.play()
 			DialogueManager.show_dialogue_balloon(load("res://dialog/locked_cabinet.dialogue"), "start")
 		
 

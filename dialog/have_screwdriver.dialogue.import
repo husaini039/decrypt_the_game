@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://buvc383lnmggo"
+path="res://.godot/imported/have_screwdriver.dialogue-4e94dde0c7e25d1f10a81fc3b405ebe5.tres"
+
+[deps]
+
+source_file="res://dialog/have_screwdriver.dialogue"
+dest_files=["res://.godot/imported/have_screwdriver.dialogue-4e94dde0c7e25d1f10a81fc3b405ebe5.tres"]
+
+[params]
+
+defaults=true

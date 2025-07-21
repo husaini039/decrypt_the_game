@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dgcad4n7hy8op"]
+[gd_scene load_steps=57 format=3 uid="uid://dgcad4n7hy8op"]
 
 [ext_resource type="Script" uid="uid://b4np8ukgvvbab" path="res://scene/table_puzzle.gd" id="1_8tg33"]
 [ext_resource type="Texture2D" uid="uid://cruc3f6kvmemk" path="res://asset/background/readingRoom.jpg" id="1_xqbvi"]
@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://c1e6xyf8bcorf" path="res://asset/sfx/key.wav" id="39_xa35i"]
 [ext_resource type="AudioStream" uid="uid://cckqwmsbf15my" path="res://asset/sfx/wrong.wav" id="40_g7uot"]
 [ext_resource type="AudioStream" uid="uid://gfvx0ub4kv7e" path="res://asset/sfx/click_button.wav" id="40_ujm40"]
+[ext_resource type="AudioStream" uid="uid://c4c5a86g7vj58" path="res://asset/sfx/open_cabinet.wav" id="41_fhvlf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tg33"]
 size = Vector2(72.5, 45.5)
@@ -537,6 +538,12 @@ pitch_scale = 1.28
 stream = ExtResource("40_ujm40")
 pitch_scale = 0.97
 
+[node name="open" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(192.025, 513.016)
+scale = Vector2(1.47781, 1.47781)
+stream = ExtResource("41_fhvlf")
+pitch_scale = 1.36
+
 [node name="wrong" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("40_g7uot")
 
@@ -559,12 +566,20 @@ stream = ExtResource("40_g7uot")
 [connection signal="input_event" from="button_unpressed/Button9e/9e" to="." method="on9e"]
 [connection signal="input_event" from="button_unpressed/Button22/22" to="." method="b22"]
 [connection signal="input_event" from="TablePanel/Skru1/Area2D" to="." method="screw1"]
+[connection signal="mouse_entered" from="TablePanel/Skru1/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TablePanel/Skru1/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="TablePanel/Skru2/Area2D2" to="." method="click_screw2"]
+[connection signal="mouse_entered" from="TablePanel/Skru2/Area2D2" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TablePanel/Skru2/Area2D2" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="TablePanel/Skru3/Area2D3" to="." method="click_skru3"]
+[connection signal="mouse_entered" from="TablePanel/Skru3/Area2D3" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TablePanel/Skru3/Area2D3" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="TablePanel/Area2D" to="." method="click_panel"]
 [connection signal="mouse_entered" from="TablePanel/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="TablePanel/Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="TablePanel/Skru4/Area2D4" to="." method="click_skru4"]
+[connection signal="mouse_entered" from="TablePanel/Skru4/Area2D4" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TablePanel/Skru4/Area2D4" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="input_event" from="KeyBox/KeY/Area2D" to="." method="click_key"]
 [connection signal="mouse_entered" from="KeyBox/KeY/Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="KeyBox/KeY/Area2D" to="." method="_on_area_2d_mouse_exited"]

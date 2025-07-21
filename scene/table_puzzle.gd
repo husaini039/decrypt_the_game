@@ -89,9 +89,10 @@ func _on_a_2_mouse_exited() -> void:
 func click_panel(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if not Global.isScrewdriver:
+			$open.play()
 			DialogueManager.show_dialogue_balloon(load("res://dialog/table_puzzle_locked.dialogue"), "start")
 		else:
-			$TablePanel
+			DialogueManager.show_dialogue_balloon(load("res://dialog/have_screwdriver.dialogue"), "start")
 		
 
 var incorrect_click = 0

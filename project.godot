@@ -51,7 +51,7 @@ escape={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialog/main.dialogue", "res://dialog/start.dialogue", "res://when_button_pressed.dialogue", "res://dialog/frame_puzzle_complete.dialogue", "res://dialog/click_locked_panel.dialogue", "res://dialog/cracked_window_reaction.dialogue", "res://dialog/locked_cabinet.dialogue", "res://dialog/no_content_frame.dialogue", "res://dialog/table_puzzle_locked.dialogue", "res://dialog/seem_need_correct.dialogue", "res://dialog/opening_dialog.dialogue", "res://dialog/need_hammer.dialogue", "res://dialog/hammer_pickup_reaction.dialogue", "res://dialog/board_break_reaction.dialogue", "res://dialog/panel_puzzle_done.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialog/main.dialogue", "res://dialog/start.dialogue", "res://when_button_pressed.dialogue", "res://dialog/frame_puzzle_complete.dialogue", "res://dialog/click_locked_panel.dialogue", "res://dialog/cracked_window_reaction.dialogue", "res://dialog/locked_cabinet.dialogue", "res://dialog/no_content_frame.dialogue", "res://dialog/table_puzzle_locked.dialogue", "res://dialog/seem_need_correct.dialogue", "res://dialog/opening_dialog.dialogue", "res://dialog/need_hammer.dialogue", "res://dialog/hammer_pickup_reaction.dialogue", "res://dialog/board_break_reaction.dialogue", "res://dialog/panel_puzzle_done.dialogue", "res://dialog/have_screwdriver.dialogue")
 
 [rendering]
 
