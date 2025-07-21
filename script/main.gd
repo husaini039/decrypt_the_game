@@ -118,6 +118,9 @@ func open_panel_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func exit_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var time_array = Global.get_time_as_minutes_seconds()
+		var score = time_array[0] * 100 + time_array[1]  # Convert to MMSS format (e.g., 29:56 becomes 2956)
+		SilentWolf.Scores.save_score(Global.player_name, score)
 		fade_anim.play("fade_in")
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scene/win_screen.tscn")
