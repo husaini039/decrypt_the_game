@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ci6bgcfpyc685"]
+[gd_scene load_steps=35 format=3 uid="uid://ci6bgcfpyc685"]
 
 [ext_resource type="Texture2D" uid="uid://8g6uj8ll88dk" path="res://asset/background/background_room1.jpg" id="1_0d0by"]
 [ext_resource type="Script" uid="uid://jf362uo1xwn2" path="res://script/main.gd" id="1_nvme4"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://p6dyldhqhwki" path="res://scene/pause_scene.tscn" id="18_x7jop"]
 [ext_resource type="Texture2D" uid="uid://coudtiqq28v6" path="res://new_asset/doorOPen.PNG" id="20_edrud"]
 [ext_resource type="AudioStream" uid="uid://cpnxa85qpt3y7" path="res://asset/sfx/paper_pickup.wav" id="21_pmntb"]
+[ext_resource type="AudioStream" uid="uid://bn6e8l4x423g3" path="res://asset/sfx/win.wav" id="24_ii51h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8vdw"]
 size = Vector2(175, 259)
@@ -245,6 +246,10 @@ pitch_scale = 1.79
 [node name="pickup2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_pmntb")
 pitch_scale = 0.74
+
+[node name="win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_ii51h")
+pitch_scale = 0.97
 
 [connection signal="input_event" from="Door/doorArea" to="Door/doorArea" method="_on_input_event"]
 [connection signal="mouse_entered" from="Door/doorArea" to="." method="_on_door_area_mouse_entered"]

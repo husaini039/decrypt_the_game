@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b66xu05ba8vh"]
+[gd_scene load_steps=26 format=3 uid="uid://b66xu05ba8vh"]
 
 [ext_resource type="Texture2D" uid="uid://8g6uj8ll88dk" path="res://asset/background/background_room1.jpg" id="1_8a64a"]
 [ext_resource type="Texture2D" uid="uid://c7fwr7tfdl83c" path="res://asset/decoration/door.PNG" id="2_4r1r4"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bbttdgo4frril" path="res://asset/sfx/qiuck sizzle.wav" id="7_ikk7v"]
 [ext_resource type="AudioStream" uid="uid://cq5ujtv2e2yt5" path="res://asset/sfx/correctSound.mp3" id="8_4nc4o"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="9_xjddu"]
+[ext_resource type="Texture2D" uid="uid://hgdxxsclhne" path="res://asset/panel_stuff/lcb_note.PNG" id="10_4r1r4"]
 
 [sub_resource type="FontVariation" id="FontVariation_0i53x"]
 base_font = ExtResource("5_hlubm")
@@ -221,6 +222,11 @@ shape = SubResource("RectangleShape2D_1sb7m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FilterFront/right"]
 position = Vector2(543.375, 1.12501)
 shape = SubResource("RectangleShape2D_1sb7m")
+
+[node name="LcbNote" type="Sprite2D" parent="."]
+position = Vector2(348, 230)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("10_4r1r4")
 
 [connection signal="input_event" from="keypadLock/AreaEnter" to="keypadLock" method="_on_area_enter_input_event"]
 [connection signal="mouse_entered" from="keypadLock/AreaEnter" to="keypadLock" method="mouse_entered"]

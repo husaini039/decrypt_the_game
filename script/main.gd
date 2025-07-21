@@ -116,13 +116,17 @@ func open_panel_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		get_tree().change_scene_to_file("res://scene/keypad_maindoor_scene.tscn")
 
+var score_submit = false
 
 func exit_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		$FadeTransition.visible = true
-		var time_array = Global.get_time_as_minutes_seconds()
-		var score = time_array[0] * 100 + time_array[1]  # Convert to MMSS format (e.g., 29:56 becomes 2956)
-		SilentWolf.Scores.save_score(Global.player_name, score)
-		fade_anim.play("fade_in")
-		await get_tree().create_timer(2).timeout
-		get_tree().change_scene_to_file("res://scene/win_screen.tscn")
+		if !score_submit:
+			$FadeTransition.visible = true
+			$win.play()
+			var time_array = Global.get_time_as_minutes_seconds()
+			var score = time_array[0] * 100 + time_array[1]  # Convert to MMSS format (e.g., 29:56 becomes 2956)
+			SilentWolf.Scores.save_score(Global.player_name, score)
+			score_submit = true
+			fade_anim.play("fade_in")
+			await get_tree().create_timer(4).timeout
+			get_tree().change_scene_to_file("res://scene/win_screen.tscn")

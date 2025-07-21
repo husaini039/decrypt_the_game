@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 Global="*res://script/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+MainSong="*res://script/main_song.tscn"
 
 [dialogue_manager]
 

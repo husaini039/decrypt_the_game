@@ -55,3 +55,4 @@ scale = Vector2(0.666667, 0.740741)
 texture = ExtResource("3_dycrn")
 
 [connection signal="pressed" from="leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]

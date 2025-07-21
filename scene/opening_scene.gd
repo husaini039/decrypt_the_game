@@ -3,6 +3,7 @@ extends Node2D
 @onready var line_edit: LineEdit = $name_input
 
 func _ready() -> void:
+	MainSong.stop()
 	DialogueManager.show_dialogue_balloon(load("res://dialog/opening_dialog.dialogue"), "start")
 	await DialogueManager.dialogue_ended  # assumes signal exists
 	line_edit.visible = true
