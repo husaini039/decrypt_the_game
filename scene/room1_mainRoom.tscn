@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ci6bgcfpyc685"]
+[gd_scene load_steps=34 format=3 uid="uid://ci6bgcfpyc685"]
 
 [ext_resource type="Texture2D" uid="uid://8g6uj8ll88dk" path="res://asset/background/background_room1.jpg" id="1_0d0by"]
 [ext_resource type="Script" uid="uid://jf362uo1xwn2" path="res://script/main.gd" id="1_nvme4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://baxqllba7c6pv" path="res://scene/arrowLeft.gd" id="7_qc8tj"]
 [ext_resource type="Script" uid="uid://cr3bewlhy0qnx" path="res://scene/arrowRight.gd" id="8_kpc4e"]
 [ext_resource type="Texture2D" uid="uid://b5uiyqmg41jxe" path="res://asset/decoration/sticky.PNG" id="9_kpc4e"]
+[ext_resource type="AudioStream" uid="uid://duva4slu3v0ci" path="res://asset/sfx/break_wood.wav" id="11_1rjf0"]
 [ext_resource type="PackedScene" uid="uid://ctdp64m27jddo" path="res://scene/fade_transition.tscn" id="11_v058b"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="12_nb3fk"]
 [ext_resource type="Texture2D" uid="uid://ceeqlqwoxoyh3" path="res://new_asset/sticky_blue.PNG" id="13_nb3fk"]
@@ -137,6 +138,12 @@ texture = ExtResource("9_kpc4e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sticky/stickyNote"]
 position = Vector2(37.6475, 18.8237)
 shape = SubResource("RectangleShape2D_v058b")
+
+[node name="break_wood" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(0.888889, 0.888889)
+stream = ExtResource("11_1rjf0")
+pitch_scale = 0.73
 
 [node name="FilterFront" type="Sprite2D" parent="."]
 position = Vector2(640, 400)

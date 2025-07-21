@@ -108,6 +108,7 @@ func open_wood(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			Global.isBoard = true
 			$Board.visible = false
 			$keypad_door.visible = true
+			$break_wood.play()
 			DialogueManager.show_dialogue_balloon(load("res://dialog/board_break_reaction.dialogue"), "start")
 
 
@@ -118,6 +119,7 @@ func open_panel_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func exit_door(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		$FadeTransition.visible = true
 		var time_array = Global.get_time_as_minutes_seconds()
 		var score = time_array[0] * 100 + time_array[1]  # Convert to MMSS format (e.g., 29:56 becomes 2956)
 		SilentWolf.Scores.save_score(Global.player_name, score)
