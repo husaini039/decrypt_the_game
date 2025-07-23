@@ -3,6 +3,7 @@ extends Node2D
 @onready var fade_anim = $ColorRect2/AnimationPlayer
 
 func _ready() -> void:
+	MainSong.playing = false
 	Global.reset_globals()
 	fade_anim.play("fade_out")
 

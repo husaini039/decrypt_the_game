@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	MainSong.playing = false
+	$bg.play()
 	
 	
 	$AnimationPlayer.play("fade_in_text")

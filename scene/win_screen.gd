@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	MainSong.playing = false
 	$win.play()
 	Global.reset_globals()
 

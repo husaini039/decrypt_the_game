@@ -1,6 +1,7 @@
 extends AudioStreamPlayer
 
 const level_music = preload("res://asset/sfx/main_song.mp3")
+const in_game_music = preload("res://asset/sfx/game_bg.mp3")
 
 func _play_music(music: AudioStream, volume= -15.0):
 	if stream == music:
@@ -12,7 +13,10 @@ func _play_music(music: AudioStream, volume= -15.0):
 	
 func play_music_level():
 	_play_music(level_music)
-	
+
+func play_in_game_bg():
+	_play_music(in_game_music)
+
 func play_FX(stream:AudioStream, volume = -15.0):
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream= stream

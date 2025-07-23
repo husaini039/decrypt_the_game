@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdlykqfxfjqa8"]
+[gd_scene load_steps=11 format=3 uid="uid://cdlykqfxfjqa8"]
 
 [ext_resource type="Script" uid="uid://dyrg3eylis638" path="res://scene/opening_scene.gd" id="1_44ibv"]
 [ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="2_wjdpy"]
 [ext_resource type="FontFile" uid="uid://3hjaa4twmkdf" path="res://asset/UI/Sprout Lands - UI Pack - Basic pack/fonts/WestoriademoRegular-nAdWJ.otf" id="3_wjdpy"]
+[ext_resource type="AudioStream" uid="uid://8iwfidcdqy0m" path="res://asset/sfx/ambience.mp3" id="4_atww0"]
 
 [sub_resource type="Animation" id="Animation_atww0"]
 resource_name = "fade_in_text"
@@ -172,3 +173,8 @@ offset_bottom = 722.542
 theme_override_fonts/font = ExtResource("3_wjdpy")
 theme_override_font_sizes/font_size = 26
 text = "press enter"
+
+[node name="bg" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(576, 696)
+stream = ExtResource("4_atww0")
+volume_db = 3.0

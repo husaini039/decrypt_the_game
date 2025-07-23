@@ -3,6 +3,8 @@ extends Node2D
 @onready var fade_anim = $FadeTransition/AnimationPlayer
 
 func _ready():
+	MainSong.playing = true
+	MainSong.play_in_game_bg()
 	if not Global.start_dialogue_shown:
 		$FadeTransition.visible = true
 		fade_anim.play("fade_out")
