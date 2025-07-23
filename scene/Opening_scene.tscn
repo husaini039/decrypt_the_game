@@ -1,7 +1,108 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdlykqfxfjqa8"]
+[gd_scene load_steps=10 format=3 uid="uid://cdlykqfxfjqa8"]
 
 [ext_resource type="Script" uid="uid://dyrg3eylis638" path="res://scene/opening_scene.gd" id="1_44ibv"]
 [ext_resource type="FontFile" uid="uid://bpympn72oe6w0" path="res://font/vinivicious.ttf" id="2_wjdpy"]
+[ext_resource type="FontFile" uid="uid://3hjaa4twmkdf" path="res://asset/UI/Sprout Lands - UI Pack - Basic pack/fonts/WestoriademoRegular-nAdWJ.otf" id="3_wjdpy"]
+
+[sub_resource type="Animation" id="Animation_atww0"]
+resource_name = "fade_in_text"
+length = 1.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caution:theme_override_colors/font_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8x2bu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caution:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("caution2:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wjdpy"]
+resource_name = "fade_out_text"
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caution:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bmwjb"]
+resource_name = "fade_in_pause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caution2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l662w"]
+resource_name = "fade_out_pause"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("caution2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmwjb"]
+_data = {
+&"RESET": SubResource("Animation_8x2bu"),
+&"fade_in_pause": SubResource("Animation_bmwjb"),
+&"fade_in_text": SubResource("Animation_atww0"),
+&"fade_out_pause": SubResource("Animation_l662w"),
+&"fade_out_text": SubResource("Animation_wjdpy")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_44ibv")
@@ -29,3 +130,45 @@ flat = true
 draw_control_chars = true
 select_all_on_focus = true
 secret_character = "*"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bmwjb")
+}
+
+[node name="caution" type="Label" parent="."]
+visible = false
+offset_left = 120.0
+offset_top = 248.0
+offset_right = 1151.0
+offset_bottom = 499.188
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_wjdpy")
+theme_override_font_sizes/font_size = 51
+text = "Keeping a NOTE nearby might just save you
+especially when time starts slipping away. 
+
+Stay sharp... and good luck"
+horizontal_alignment = 1
+
+[node name="caution2" type="Label" parent="."]
+visible = false
+offset_left = 296.0
+offset_top = 328.0
+offset_right = 975.0
+offset_bottom = 397.063
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_wjdpy")
+theme_override_font_sizes/font_size = 51
+text = "Press \"P\" to pause the game"
+horizontal_alignment = 1
+
+[node name="press_enter" type="Label" parent="."]
+visible = false
+offset_left = 576.0
+offset_top = 696.0
+offset_right = 701.0
+offset_bottom = 722.542
+theme_override_fonts/font = ExtResource("3_wjdpy")
+theme_override_font_sizes/font_size = 26
+text = "press enter"

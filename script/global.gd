@@ -62,7 +62,7 @@ var game_over_scene := "res://scene/game_over.tscn"
 var isPause = false
 func _unhandled_input(event: InputEvent) -> void:
 	if running:
-		if event.is_action_pressed("escape"):
+		if event.is_action_pressed("p"):
 			if !isPause:
 				var pause_scene = preload("res://scene/pause_scene.tscn").instantiate()
 				get_tree().root.add_child(pause_scene)

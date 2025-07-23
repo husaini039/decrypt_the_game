@@ -245,7 +245,6 @@ texture = ExtResource("7_o3onp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/XorClue2/Area2D"]
 position = Vector2(2.54541, 0.224976)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6wppp")
 
 [node name="XorClue" type="Sprite2D" parent="notes"]
@@ -276,14 +275,12 @@ shape = SubResource("RectangleShape2D_ofkid")
 [node name="red_note" type="Sprite2D" parent="notes"]
 visible = false
 position = Vector2(-112, -16)
-scale = Vector2(1, 1)
 texture = ExtResource("7_o3onp")
 
 [node name="Area2D" type="Area2D" parent="notes/red_note"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="notes/red_note/Area2D"]
 position = Vector2(12, 24)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_57swr")
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]

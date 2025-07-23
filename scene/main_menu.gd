@@ -2,7 +2,7 @@ extends Node2D
 var button_type = null
 
 func _ready() -> void:
-
+	MainSong.playing = true
 	Global.reset_globals()
 	MainSong.play_music_level()
 

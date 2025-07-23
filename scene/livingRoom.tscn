@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://ct3dah2uskerd" path="res://asset/decoration/keypad.PNG" id="8_ciwwo"]
 [ext_resource type="Texture2D" uid="uid://dl42rdduw1fr3" path="res://new_asset/frame_puzzle/frame_not_empty.PNG" id="9_0cq6m"]
 [ext_resource type="Script" uid="uid://gvmym1u1bjq2" path="res://scene/keypad.gd" id="10_42x5w"]
-[ext_resource type="Texture2D" uid="uid://di3o53scaqpkr" path="res://new_asset/yellow_paper.PNG" id="10_bs3i6"]
 [ext_resource type="Texture2D" uid="uid://dkupccpteadlw" path="res://asset/background/filter_front.PNG" id="16_jyn0y"]
 [ext_resource type="Texture2D" uid="uid://dv0wvav86xgrl" path="res://asset/decoration/almari.png" id="17_0453d"]
 [ext_resource type="Texture2D" uid="uid://cw0qsnu8qx7af" path="res://new_asset/frame_puzzle/frame_complete.PNG" id="17_bs3i6"]
 [ext_resource type="Texture2D" uid="uid://b7f7unxx41ic0" path="res://asset/decoration/button1.png" id="19_bs3i6"]
 [ext_resource type="AudioStream" uid="uid://dyyckw18o41a8" path="res://asset/sfx/glass_break.wav" id="19_ra3dr"]
+[ext_resource type="Texture2D" uid="uid://dm0bu2hcu8dhd" path="res://asset/decoration/aes_note.PNG" id="20_bs3i6"]
 [ext_resource type="Texture2D" uid="uid://d0xhaaknalnvc" path="res://asset/decoration/button2.png" id="20_ra3dr"]
 [ext_resource type="AudioStream" uid="uid://dm265wu5sgyrd" path="res://asset/sfx/item_frame_puzzle/pickup_piece.wav" id="21_3tx3w"]
 
@@ -219,7 +219,7 @@ stream = ExtResource("19_ra3dr")
 visible = false
 position = Vector2(617, 346)
 scale = Vector2(1.12426, 1.12426)
-texture = ExtResource("10_bs3i6")
+texture = ExtResource("20_bs3i6")
 
 [node name="Area2D" type="Area2D" parent="YellowPaper"]
 position = Vector2(-548.808, -307.759)
